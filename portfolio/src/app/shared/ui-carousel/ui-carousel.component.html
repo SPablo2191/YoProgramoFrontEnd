@@ -1,0 +1,9 @@
+<ngb-carousel class="carousel slide my-4" [showNavigationIndicators]="false">
+  <ng-template ngbSlide *ngFor="let item of items">
+    <app-ui-study-item
+      [description]="item.description"
+      [title]="item.title"
+      [image]="item.image"
+    ></app-ui-study-item>
+  </ng-template>
+</ngb-carousel>
