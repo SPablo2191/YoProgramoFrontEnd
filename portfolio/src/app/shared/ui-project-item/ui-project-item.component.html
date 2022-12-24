@@ -1,4 +1,4 @@
-<p-card styleClass="p-card-shadow m-4 p-4    border-round ">
+<p-card styleClass="p-card-shadow m-4 p-4 bg-dark text-white    rounded">
   <ng-template pTemplate="header">
     <div class="container">
       <h3>{{ title }}</h3>
@@ -11,7 +11,7 @@
   <ng-template pTemplate="footer">
     <hr />
     <a
-      href="https://cinemar-api.vercel.app/"
+      [href]="source"
       class="stretched-link text-decoration-none text-muted"
       target="_blank"
       >Ver Proyecto...</a
