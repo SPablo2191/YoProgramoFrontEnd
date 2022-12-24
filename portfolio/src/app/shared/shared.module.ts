@@ -8,6 +8,7 @@ import { UiProjectItemComponent } from './ui-project-item/ui-project-item.compon
 import { UiWorkitemComponent } from './ui-workitem/ui-workitem.component';
 import { UiProjectCarouselComponent } from './ui-project-carousel/ui-project-carousel.component';
 import { UiWorkCarouselComponent } from './ui-work-carousel/ui-work-carousel.component';
+import { UiProgressBarComponent } from './ui-progress-bar/ui-progress-bar.component';
 
 
 
@@ -19,7 +20,8 @@ import { UiWorkCarouselComponent } from './ui-work-carousel/ui-work-carousel.com
     UiProjectItemComponent,
     UiWorkitemComponent,
     UiProjectCarouselComponent,
-    UiWorkCarouselComponent
+    UiWorkCarouselComponent,
+    UiProgressBarComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { UiWorkCarouselComponent } from './ui-work-carousel/ui-work-carousel.com
     UiNavbarComponent,
     UiCarouselComponent,
     UiProjectCarouselComponent,
-    UiWorkCarouselComponent
+    UiWorkCarouselComponent,
+    UiProgressBarComponent
   ]
 })
 export class SharedModule { }

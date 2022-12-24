@@ -3,6 +3,12 @@
       <span class="text-muted">Knowledge.</span>
     </h2>
     <div class="container my-4">
-
+      <div class="row" *ngFor="let item of (items$ | async)!">
+        <app-ui-progress-bar
+        [label]="item.name"
+        [value]="item.value"
+        [color]="item.color"
+        ></app-ui-progress-bar>
+      </div>
     </div>
   </div>

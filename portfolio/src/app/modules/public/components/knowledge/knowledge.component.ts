@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Knowledge } from 'src/app/models/Knowledge.interface';
+import { KnowledgeService } from 'src/app/services/knowledge.service';
 
 @Component({
   selector: 'app-knowledge',
@@ -6,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./knowledge.component.css']
 })
 export class KnowledgeComponent implements OnInit {
-
-  constructor() { }
+  items$! : Observable<Knowledge[]>;
+  constructor(private knowledgeService : KnowledgeService) { }
 
   ngOnInit(): void {
+    this.items$ = this.knowledgeService.get();
   }
 
 }

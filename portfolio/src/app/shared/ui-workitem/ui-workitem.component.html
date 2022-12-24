@@ -1,8 +1,17 @@
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top bd-placeholder-img rounded-circle" [src]="source" [alt]="businessName">
-    <div class="card-body text-center">
-      <h3 class="card-title">{{businessName}}</h3>
-      <h5>{{role}}</h5>
-      <p class="card-text">{{releaseDate | date}}</p>
-    </div>
+<div class="card m-2">
+  <div class="d-flex justify-content-center">
+    <img
+      class="rounded-circle my-2"
+      width="200"
+      style="object-fit: cover"
+      height="200"
+      [src]="source"
+      [alt]="businessName"
+    />
   </div>
+  <div class="card-body text-center">
+    <h3 class="card-title">{{ businessName }}</h3>
+    <h5 class="text-muted">{{ role }}</h5>
+    <p class="card-text">{{ releaseDate | date }}</p>
+  </div>
+</div>
