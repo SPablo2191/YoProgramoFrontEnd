@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Study } from 'src/app/models/Study.interface';
 
 @Component({
   selector: 'app-ui-carousel',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./ui-carousel.component.css']
 })
 export class UiCarouselComponent implements OnInit {
-  @Input() items! : any[];
+  @Input() items! : Study[];
   constructor() { }
 
   ngOnInit(): void {

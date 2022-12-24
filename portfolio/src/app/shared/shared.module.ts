@@ -5,6 +5,8 @@ import { ImportsModule } from '../imports/imports.module';
 import { UiCarouselComponent } from './ui-carousel/ui-carousel.component';
 import { UiStudyItemComponent } from './ui-study-item/ui-study-item.component';
 import { UiProjectItemComponent } from './ui-project-item/ui-project-item.component';
+import { UiWorkitemComponent } from './ui-workitem/ui-workitem.component';
+import { UiProjectCarouselComponent } from './ui-project-carousel/ui-project-carousel.component';
 
 
 
@@ -13,15 +15,18 @@ import { UiProjectItemComponent } from './ui-project-item/ui-project-item.compon
     UiNavbarComponent,
     UiCarouselComponent,
     UiStudyItemComponent,
-    UiProjectItemComponent
+    UiProjectItemComponent,
+    UiWorkitemComponent,
+    UiProjectCarouselComponent
   ],
   imports: [
     CommonModule,
-    ImportsModule
+    ImportsModule,
   ],
   exports :[
     UiNavbarComponent,
-    UiCarouselComponent
+    UiCarouselComponent,
+    UiProjectCarouselComponent
   ]
 })
 export class SharedModule { }
