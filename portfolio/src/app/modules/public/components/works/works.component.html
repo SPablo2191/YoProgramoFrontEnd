@@ -3,5 +3,6 @@
         <span class="text-muted">Work experience.</span>
     </h2>
   <div class="container my-4" id="work">
+    <app-ui-work-carousel [items]="(works$ | async)!"></app-ui-work-carousel>
   </div>
   </div>

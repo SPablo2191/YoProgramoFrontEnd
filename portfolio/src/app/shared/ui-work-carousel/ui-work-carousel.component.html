@@ -1,0 +1,18 @@
+<p-carousel
+  [value]="items"
+  [numVisible]="3"
+  [numScroll]="3"
+  [circular]="false"
+  [showIndicators]="false"
+  class="m-2"
+>
+  <ng-template let-item pTemplate="item">
+    <app-ui-workitem
+      [businessName]="item.businessName"
+      [releaseDate]="item.releaseDate"
+      [role]="item.role"
+      [source]="item.source"
+    >
+    </app-ui-workitem>
+  </ng-template>
+</p-carousel>

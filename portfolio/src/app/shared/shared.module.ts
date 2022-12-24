@@ -7,6 +7,7 @@ import { UiStudyItemComponent } from './ui-study-item/ui-study-item.component';
 import { UiProjectItemComponent } from './ui-project-item/ui-project-item.component';
 import { UiWorkitemComponent } from './ui-workitem/ui-workitem.component';
 import { UiProjectCarouselComponent } from './ui-project-carousel/ui-project-carousel.component';
+import { UiWorkCarouselComponent } from './ui-work-carousel/ui-work-carousel.component';
 
 
 
@@ -17,7 +18,8 @@ import { UiProjectCarouselComponent } from './ui-project-carousel/ui-project-car
     UiStudyItemComponent,
     UiProjectItemComponent,
     UiWorkitemComponent,
-    UiProjectCarouselComponent
+    UiProjectCarouselComponent,
+    UiWorkCarouselComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { UiProjectCarouselComponent } from './ui-project-carousel/ui-project-car
   exports :[
     UiNavbarComponent,
     UiCarouselComponent,
-    UiProjectCarouselComponent
+    UiProjectCarouselComponent,
+    UiWorkCarouselComponent
   ]
 })
 export class SharedModule { }

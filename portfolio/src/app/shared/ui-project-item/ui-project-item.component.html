@@ -1,15 +1,19 @@
-<p-card>
+<p-card styleClass="p-card-shadow m-4 p-4    border-round ">
   <ng-template pTemplate="header">
     <div class="container">
       <h3>{{ title }}</h3>
       <h5 class="text-muted">{{ releaseDate | date }}</h5>
     </div>
   </ng-template>
-  <div >
+  <div>
     <p>{{ description }}</p>
   </div>
   <ng-template pTemplate="footer">
-    <a href="https://cinemar-api.vercel.app/" class="stretched-link text-decoration-none"  target="_blank"
+    <hr />
+    <a
+      href="https://cinemar-api.vercel.app/"
+      class="stretched-link text-decoration-none text-muted"
+      target="_blank"
       >Ver Proyecto...</a
     >
   </ng-template>
