@@ -9,6 +9,8 @@ import { UiWorkitemComponent } from './ui-workitem/ui-workitem.component';
 import { UiProjectCarouselComponent } from './ui-project-carousel/ui-project-carousel.component';
 import { UiWorkCarouselComponent } from './ui-work-carousel/ui-work-carousel.component';
 import { UiProgressBarComponent } from './ui-progress-bar/ui-progress-bar.component';
+import { UiTextAreaComponent } from './ui-text-area/ui-text-area.component';
+import { ContactMeComponent } from './contact-me/contact-me.component';
 
 
 
@@ -21,7 +23,9 @@ import { UiProgressBarComponent } from './ui-progress-bar/ui-progress-bar.compon
     UiWorkitemComponent,
     UiProjectCarouselComponent,
     UiWorkCarouselComponent,
-    UiProgressBarComponent
+    UiProgressBarComponent,
+    UiTextAreaComponent,
+    ContactMeComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +36,8 @@ import { UiProgressBarComponent } from './ui-progress-bar/ui-progress-bar.compon
     UiCarouselComponent,
     UiProjectCarouselComponent,
     UiWorkCarouselComponent,
-    UiProgressBarComponent
+    UiProgressBarComponent,
+    UiTextAreaComponent
   ]
 })
 export class SharedModule { }
