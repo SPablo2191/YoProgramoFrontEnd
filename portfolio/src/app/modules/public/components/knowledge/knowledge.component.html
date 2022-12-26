@@ -2,7 +2,7 @@
     <h2>Conocimientos.
       <span class="text-muted">Knowledge.</span>
     </h2>
-    <div class="container my-4 bg-dark rounded p-4">
+    <div class=" my-4 bg-dark rounded p-4">
       <div class="row" *ngFor="let item of (items$ | async)!">
         <app-ui-progress-bar
         [label]="item.name"

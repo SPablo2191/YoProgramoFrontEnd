@@ -17,24 +17,17 @@ export class WorksService extends baseService {
         source : 'assets/images/about-me-picture.jpeg'
       } as Work,
       {
-        idWork : 1,
-        businessName : "Siltium",
+        idWork : 2,
+        businessName : "Digio",
         releaseDate : new Date(),
-        role : 'Web Developer',
+        role : 'Desarrollador y soporte tecnico',
         source : 'assets/images/about-me-picture.jpeg'
       } as Work,
       {
-        idWork : 1,
-        businessName : "Siltium",
+        idWork : 2,
+        businessName : "UCASAL",
         releaseDate : new Date(),
-        role : 'Web Developer',
-        source : 'assets/images/about-me-picture.jpeg'
-      } as Work,
-      {
-        idWork : 1,
-        businessName : "Siltium",
-        releaseDate : new Date(),
-        role : 'Web Developer',
+        role : 'Estudiante Investigador',
         source : 'assets/images/about-me-picture.jpeg'
       } as Work
     ];

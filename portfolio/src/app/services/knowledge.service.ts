@@ -14,6 +14,12 @@ export class KnowledgeService extends baseService {
         name : 'Python',
         value : 75,
         color : 'success'
+      } as Knowledge,
+      {
+        idKnowledge : 2,
+        name : 'Angular',
+        value : 60,
+        color : 'danger'
       } as Knowledge
     ];
   }
