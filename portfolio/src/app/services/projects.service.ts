@@ -23,7 +23,7 @@ export class ProjectsService extends baseService {
         Proyecto desarrollado para el curso "Mil Programadores 2022 - Python"`,
         title: 'Cinemar API',
         releaseDate: new Date(),
-        source: 'https://cinemar.vercel.app/',
+        source: 'https://cinemar-api.vercel.app/',
       } as Project,
       {
         idProject: 3,
