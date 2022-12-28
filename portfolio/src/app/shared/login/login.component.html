@@ -1,0 +1,13 @@
+<form [formGroup]="formGroup">
+    <div class="form-group">
+        <app-ui-input [group]="this.formGroup" name="userName" label="Nombre de Usuario"></app-ui-input>
+    </div>
+    <div class="form-group">
+      <app-ui-password-input
+        [group]="this.formGroup"
+        name="password"
+        label="Contraseña"
+      ></app-ui-password-input>
+    </div>
+    <button type="submit" class="btn btn-primary my-2">Acceder</button>
+</form>

@@ -11,6 +11,11 @@ import { UiWorkCarouselComponent } from './ui-work-carousel/ui-work-carousel.com
 import { UiProgressBarComponent } from './ui-progress-bar/ui-progress-bar.component';
 import { UiTextAreaComponent } from './ui-text-area/ui-text-area.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MessageService } from 'primeng/api';
+import { LoginComponent } from './login/login.component';
+import { UiInputComponent } from './ui-input/ui-input.component';
+import { UiPasswordInputComponent } from './ui-password-input/ui-password-input.component';
 
 
 
@@ -25,11 +30,15 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
     UiWorkCarouselComponent,
     UiProgressBarComponent,
     UiTextAreaComponent,
-    ContactMeComponent
+    ContactMeComponent,
+    LoginComponent,
+    UiInputComponent,
+    UiPasswordInputComponent
   ],
   imports: [
     CommonModule,
     ImportsModule,
+    ReactiveFormsModule
   ],
   exports :[
     UiNavbarComponent,
@@ -37,7 +46,12 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
     UiProjectCarouselComponent,
     UiWorkCarouselComponent,
     UiProgressBarComponent,
-    UiTextAreaComponent
+    UiTextAreaComponent,
+    UiInputComponent,
+    UiPasswordInputComponent
+  ],
+  providers : [
+    MessageService
   ]
 })
 export class SharedModule { }

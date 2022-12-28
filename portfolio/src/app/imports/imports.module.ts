@@ -9,6 +9,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
+import {InputTextModule} from 'primeng/inputtext';
 @NgModule({
   imports: [CommonModule],
   exports: [
@@ -18,6 +19,7 @@ import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
     CardModule,
     InputTextareaModule,
     DynamicDialogModule,
+    InputTextModule
   ],
   providers: [
     NgbProgressbarConfig,
