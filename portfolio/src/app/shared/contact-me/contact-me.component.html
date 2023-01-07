@@ -2,14 +2,17 @@
     <div class="row">
         <div class="col">
             <div class="my-2">
-                <app-ui-text-area ></app-ui-text-area>
+                <app-ui-text-area
+                [group]="formGroup"
+                name="message"
+                label="Ingrese su mensaje..."
+                 ></app-ui-text-area>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="d-flex justify-content-center my-2">
             <button type="button" class="btn btn-secondary mx-2">Cancelar</button>
-
             <button type="button" class="btn btn-primary">Enviar</button>
         </div>
     </div>

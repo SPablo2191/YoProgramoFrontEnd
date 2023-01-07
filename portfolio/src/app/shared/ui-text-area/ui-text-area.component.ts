@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ui-text-area',
@@ -7,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UiTextAreaComponent implements OnInit {
   @Input() label! : string;
+  @Input() group!: FormGroup;
+  @Input() name!: string;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,4 +1,13 @@
-<span class="p-float-label">
-    <textarea id="float-input" rows="5" cols="60" pInputTextarea [autoResize]="true"></textarea>
+<div class="field" [formGroup]="group">
+  <span class="p-float-label">
+    <textarea
+      [formControlName]="name"
+      id="float-input"
+      rows="5"
+      cols="60"
+      pInputTextarea
+      [autoResize]="true"
+    ></textarea>
     <label for="float-input">{{ label }}</label>
-</span>
+  </span>
+</div>
