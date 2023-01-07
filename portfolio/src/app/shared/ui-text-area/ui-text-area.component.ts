@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-ui-text-area',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ui-text-area.component.css']
 })
 export class UiTextAreaComponent implements OnInit {
-
+  @Input() label! : string;
   constructor() { }
 
   ngOnInit(): void {

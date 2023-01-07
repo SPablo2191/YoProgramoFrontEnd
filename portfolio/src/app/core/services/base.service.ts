@@ -9,6 +9,7 @@ export class baseService {
     return this.httpClient.get<any[]>(url, { params });
   }
   post(data: any) {
+    console.log('entro a post');
     return this.httpClient.post(this.serverUrl!, data);
   }
   put() {}

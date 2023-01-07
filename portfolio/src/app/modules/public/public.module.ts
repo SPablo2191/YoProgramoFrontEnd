@@ -12,6 +12,8 @@ import { KnowledgeComponent } from './components/knowledge/knowledge.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { WorksComponent } from './components/works/works.component';
 import { ImportsModule } from 'src/app/imports/imports.module';
+import { EditEducationComponent } from './components/education/components/edit-education/edit-education.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,13 +25,15 @@ import { ImportsModule } from 'src/app/imports/imports.module';
     EducationComponent,
     KnowledgeComponent,
     ProjectsComponent,
-    WorksComponent
+    WorksComponent,
+    EditEducationComponent
   ],
   imports: [
     CommonModule,
     PublicRoutingModule,
     SharedModule,
-    ImportsModule
+    ImportsModule,
+    ReactiveFormsModule
   ]
 })
 export class PublicModule { }

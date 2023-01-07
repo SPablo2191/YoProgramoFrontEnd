@@ -1,15 +1,17 @@
 import { FormGroup } from "@angular/forms";
 import { MessageService } from "primeng/api";
+import { baseService } from "../services/base.service";
 
 export class abstractForm{
     formGroup! : FormGroup
-    constructor(private messageService : MessageService) {
+    constructor(private messageService : MessageService,private api : baseService) {
     }
 
     createForm() : void{}
 
     submit(){
-        console.log(this.formGroup);  
+        console.log(this.formGroup);
+        this.api.post({});
     }
     addMessageService(severity: string, summary: string, key: string, detail: string, data?: string) {
         this.messageService.add({

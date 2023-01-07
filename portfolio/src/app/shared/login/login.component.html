@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup">
+<form [formGroup]="formGroup" (submit)="submit()">
     <div class="form-group">
         <app-ui-input [group]="this.formGroup" name="userName" label="Nombre de Usuario"></app-ui-input>
     </div>
