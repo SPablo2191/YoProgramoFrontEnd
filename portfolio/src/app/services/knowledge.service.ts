@@ -1,26 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { baseService } from '../core/services/base.service';
 import { Knowledge } from '../models/Knowledge.interface';
+import { pathnameEnum } from '../shared/enums/pathName.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class KnowledgeService extends baseService {
-  constructor() {
-    super();
-    this.items = [
-      {
-        idKnowledge : 1,
-        name : 'Python',
-        value : 75,
-        color : 'success'
-      } as Knowledge,
-      {
-        idKnowledge : 2,
-        name : 'Angular',
-        value : 60,
-        color : 'danger'
-      } as Knowledge
-    ];
+  constructor(httpClient: HttpClient) {
+    super(httpClient);
   }
+  override serverUrl = `${environment.URL}${pathnameEnum.knowledge}`;
 }

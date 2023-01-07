@@ -1,7 +1,7 @@
 export interface Project{
     idProject : number;
     title : string;
-    releaseDate : Date;
     description : string;
+    releaseDate : Date;
     source : string;
 }

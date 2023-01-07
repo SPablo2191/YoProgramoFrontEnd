@@ -1,35 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { baseService } from '../core/services/base.service';
 import { Work } from '../models/Work.interface';
+import { pathnameEnum } from '../shared/enums/pathName.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WorksService extends baseService {
-  constructor() {
-    super();
-    this.items = [
-      {
-        idWork : 1,
-        businessName : "Siltium",
-        releaseDate : new Date(),
-        role : 'Web Developer',
-        source : 'assets/images/about-me-picture.jpeg'
-      } as Work,
-      {
-        idWork : 2,
-        businessName : "Digio",
-        releaseDate : new Date(),
-        role : 'Desarrollador y soporte tecnico',
-        source : 'assets/images/about-me-picture.jpeg'
-      } as Work,
-      {
-        idWork : 2,
-        businessName : "UCASAL",
-        releaseDate : new Date(),
-        role : 'Estudiante Investigador',
-        source : 'assets/images/about-me-picture.jpeg'
-      } as Work
-    ];
+  constructor(httpClient: HttpClient) {
+    super(httpClient);
   }
+  override serverUrl = `${environment.URL}${pathnameEnum.work}`;
+
 }

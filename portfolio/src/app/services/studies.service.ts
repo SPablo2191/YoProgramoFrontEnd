@@ -1,26 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { baseService } from '../core/services/base.service';
 import { Study } from '../models/Study.interface';
+import { pathnameEnum } from '../shared/enums/pathName.enum';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StudiesService extends baseService {
-  constructor() {
-    super();
-    this.items = [
-      {
-        idStudy: 1,
-        description: 'Proximo a cursar 5to año',
-        title: 'Ingenieria en Informática',
-        image: 'assets/images/about-me-picture.jpeg',
-      } as Study,
-      {
-        idStudy: 2,
-        description: 'Cursado en la Universidad Catolica de Salta',
-        title: 'Tecnico Universitario en Informática',
-        image: 'assets/images/about-me-picture.jpeg',
-      } as Study,
-    ];
+  constructor(httpClient: HttpClient) {
+    super(httpClient);
   }
+  override serverUrl = `${environment.URL}${pathnameEnum.study}`;
+
 }

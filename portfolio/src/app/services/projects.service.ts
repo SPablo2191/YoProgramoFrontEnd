@@ -1,37 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { baseService } from '../core/services/base.service';
 import { Project } from '../models/Project.interface';
+import { pathnameEnum } from '../shared/enums/pathName.enum';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjectsService extends baseService {
-  constructor() {
-    super();
-    this.items = [
-      {
-        idProject: 1,
-        description:
-          'Página web diseñada en Angular para el cine "Cinemar".Proyecto diseñado para el curso "Mil Programadores 2022 - Python"',
-        title: 'Cinemar Web',
-        releaseDate: new Date(),
-        source: 'https://cinemar.vercel.app/',
-      } as Project,
-      {
-        idProject: 2,
-        description: `API REST desarrollada en Python empleando el "micro-framework" Flask.
-        Proyecto desarrollado para el curso "Mil Programadores 2022 - Python"`,
-        title: 'Cinemar API',
-        releaseDate: new Date(),
-        source: 'https://cinemar-api.vercel.app/',
-      } as Project,
-      {
-        idProject: 3,
-        title: 'Hospital Materno Infantil SGH',
-        description: `Sistema de gestión hospitalaria desarrollada en Angular empleando Supabase.`,
-        releaseDate: new Date(),
-        source: 'https://github.com/MrGoropeza/sistemas3-proyecto-hpmi',
-      } as Project,
-    ];
+  constructor(httpClient: HttpClient) {
+    super(httpClient);
   }
+  override serverUrl = `${environment.URL}${pathnameEnum.project}`;
+
 }
