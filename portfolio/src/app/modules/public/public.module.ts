@@ -11,6 +11,7 @@ import { EducationComponent } from './components/education/education.component';
 import { KnowledgeComponent } from './components/knowledge/knowledge.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { WorksComponent } from './components/works/works.component';
+import { ImportsModule } from 'src/app/imports/imports.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { WorksComponent } from './components/works/works.component';
   imports: [
     CommonModule,
     PublicRoutingModule,
-    SharedModule 
+    SharedModule,
+    ImportsModule
   ]
 })
 export class PublicModule { }

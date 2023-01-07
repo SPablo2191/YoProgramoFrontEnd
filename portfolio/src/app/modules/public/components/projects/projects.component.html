@@ -1,9 +1,31 @@
 <div class="container-fluid" id="projects">
-  <h2>
-    Proyectos.
-    <span class="text-muted">Projects.</span>
-  </h2>
-  <div class="container-md">
-    <app-ui-project-carousel [items]="(projects$| async)!"></app-ui-project-carousel>
+  <div class="row">
+    <div class="col-md-9">
+      <h2>
+        Proyectos.
+        <span class="text-muted">Projects.</span>
+      </h2>
+    </div>
+    <div class="col-md-3">
+      <button
+      pButton
+      pRipple
+      icon="pi pi-plus"
+      label="Agregar"
+      class="p-button p-button-success mx-2  my-1"
+    ></button>
+    <button
+    pButton
+    pRipple
+    icon="pi pi-pencil"
+    label="Editar"
+    class="p-button p-button-warning text-white  my-1"
+  ></button>
+    </div>
+  </div>
+  <div class="row">
+    <app-ui-project-carousel
+      [items]="(projects$ | async)!"
+    ></app-ui-project-carousel>
   </div>
 </div>

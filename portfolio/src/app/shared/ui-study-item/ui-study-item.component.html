@@ -1,5 +1,5 @@
 <div class="picsum-img-wrapper">
-    <img [src]="image" [alt]="title"  height="400" class="rounded"  style="object-fit: cover;width: 100%;" />
+    <img [src]="(image? image : 'assets/images/about-me-picture.jpeg')" [alt]="title"  height="400" class="rounded"  style="object-fit: cover;width: 100%;" />
 </div>
 <div class="carousel-caption ">
     <h3>{{title}}</h3>
