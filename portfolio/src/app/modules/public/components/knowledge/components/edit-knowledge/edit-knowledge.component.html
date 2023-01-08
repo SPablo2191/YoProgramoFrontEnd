@@ -2,18 +2,19 @@
   <app-ui-input
   [group]="formGroup"
   name="name"
-  placeholder="Nombre..."
+  label="Nombre"
   ></app-ui-input>
   <app-ui-dropdown
   [group]="formGroup"
   name="color"
   [options]="colors"
   optionLabel="name"
-  placeholder="Color..."
+  label="Color"
+  placeholder="Seleccione un color..."
   ></app-ui-dropdown>
   <app-ui-input-number
   [group]="formGroup"
-  placeholder="Valor..."
+  label="Valor"
   name="value"
   type="percent"
   ></app-ui-input-number>
