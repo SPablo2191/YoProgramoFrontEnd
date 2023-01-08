@@ -12,6 +12,7 @@ import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import {InputTextModule} from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import {CalendarModule} from 'primeng/calendar';
+import {InputNumberModule} from 'primeng/inputnumber';
 @NgModule({
   imports: [CommonModule],
   exports: [
@@ -23,7 +24,8 @@ import {CalendarModule} from 'primeng/calendar';
     DynamicDialogModule,
     InputTextModule,
     ButtonModule,
-    CalendarModule
+    CalendarModule,
+    InputNumberModule
   ],
   providers: [
     NgbProgressbarConfig,

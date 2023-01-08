@@ -18,6 +18,7 @@ import { UiInputComponent } from './ui-input/ui-input.component';
 import { UiPasswordInputComponent } from './ui-password-input/ui-password-input.component';
 import { UiCalendarComponent } from './ui-calendar/ui-calendar.component';
 import { DialogService } from 'primeng/dynamicdialog';
+import { UiInputNumberComponent } from './ui-input-number/ui-input-number.component';
 
 
 
@@ -36,7 +37,8 @@ import { DialogService } from 'primeng/dynamicdialog';
     LoginComponent,
     UiInputComponent,
     UiPasswordInputComponent,
-    UiCalendarComponent
+    UiCalendarComponent,
+    UiInputNumberComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +54,8 @@ import { DialogService } from 'primeng/dynamicdialog';
     UiTextAreaComponent,
     UiInputComponent,
     UiPasswordInputComponent,
-    UiCalendarComponent
+    UiCalendarComponent,
+    UiInputNumberComponent
   ],
   providers : [
     MessageService,
