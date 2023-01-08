@@ -23,11 +23,17 @@
     ></app-ui-calendar>
   </div>
   <div class="row">
+    <app-ui-check-box
+    [group]="formGroup"
+    name="isFinished"
+    label="¿Ha finalizado?"
+    ></app-ui-check-box>
     <app-ui-calendar
       [group]="formGroup"
       name="endDate"
       label="fecha de Finalización"
       [touchUI]="true"
+      *ngIf="formGroup.get('isFinished')?.value"
     ></app-ui-calendar>
   </div>
   <div class="row">

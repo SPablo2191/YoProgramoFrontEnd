@@ -26,6 +26,7 @@ export class EditEducationComponent extends abstractForm implements OnInit {
       description: [],
       startDate: [],
       endDate: [],
+      isFinished : [false]
     });
   }
 
