@@ -1,5 +1,5 @@
-<div  [formGroup]="group" class="field">
-  <label for="username2" class="text-gray-700">{{ label }}</label>
+<div  [formGroup]="group" >
+  <label for="username2" class="text-muted">{{ label }}</label>
   <div >
     <p-calendar
       [formControlName]="name"
@@ -8,6 +8,7 @@
       [showTime]="time"
       [defaultDate]="date"
       [touchUI]="touchUI"
+      class="field"
       [placeholder]="placeholder"
       [showSeconds]="true"
       inputId="time"

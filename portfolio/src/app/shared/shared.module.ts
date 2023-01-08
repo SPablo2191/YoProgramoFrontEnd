@@ -16,6 +16,8 @@ import { MessageService } from 'primeng/api';
 import { LoginComponent } from './login/login.component';
 import { UiInputComponent } from './ui-input/ui-input.component';
 import { UiPasswordInputComponent } from './ui-password-input/ui-password-input.component';
+import { UiCalendarComponent } from './ui-calendar/ui-calendar.component';
+import { DialogService } from 'primeng/dynamicdialog';
 
 
 
@@ -33,7 +35,8 @@ import { UiPasswordInputComponent } from './ui-password-input/ui-password-input.
     ContactMeComponent,
     LoginComponent,
     UiInputComponent,
-    UiPasswordInputComponent
+    UiPasswordInputComponent,
+    UiCalendarComponent
   ],
   imports: [
     CommonModule,
@@ -48,10 +51,12 @@ import { UiPasswordInputComponent } from './ui-password-input/ui-password-input.
     UiProgressBarComponent,
     UiTextAreaComponent,
     UiInputComponent,
-    UiPasswordInputComponent
+    UiPasswordInputComponent,
+    UiCalendarComponent
   ],
   providers : [
-    MessageService
+    MessageService,
+    DialogService
   ]
 })
 export class SharedModule { }

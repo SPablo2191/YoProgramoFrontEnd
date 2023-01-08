@@ -1,7 +1,51 @@
 <form [formGroup]="formGroup">
-  <app-ui-input
-  [group]="formGroup"
-  name="title"
-  label="Titulo"
-  ></app-ui-input>
+  <div class="row">
+    <app-ui-input
+      [group]="formGroup"
+      name="title"
+      label="Titulo"
+    ></app-ui-input>
+  </div>
+  <div class="row">
+    <app-ui-text-area
+      [group]="formGroup"
+      name="description"
+      title="Descripción"
+    >
+    </app-ui-text-area>
+  </div>
+  <div class="row">
+    <app-ui-calendar
+      [group]="formGroup"
+      name="startDate"
+      label="Fecha de inicio"
+      [touchUI]="true"
+    ></app-ui-calendar>
+  </div>
+  <div class="row">
+    <app-ui-calendar
+      [group]="formGroup"
+      name="endDate"
+      label="fecha de Finalización"
+      [touchUI]="true"
+    ></app-ui-calendar>
+  </div>
+  <div class="row">
+    <div class="d-flex justify-content-center my-2">
+      <button
+        pButton
+        pRipple
+        label="Cancelar"
+        (click)="cancel()"
+        class="p-button p-button-secondary mx-1"
+      ></button>
+      <button
+        pButton
+        pRipple
+        label="Guardar"
+        (click)="submit()"
+        class="p-button p-button-info text-white"
+      ></button>
+    </div>
+  </div>
 </form>

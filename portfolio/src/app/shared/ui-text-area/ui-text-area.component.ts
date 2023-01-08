@@ -8,6 +8,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class UiTextAreaComponent implements OnInit {
   @Input() label! : string;
+  @Input() title! : string;
   @Input() group!: FormGroup;
   @Input() name!: string;
   constructor() { }
