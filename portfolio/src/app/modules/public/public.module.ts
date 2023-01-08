@@ -16,6 +16,7 @@ import { EditEducationComponent } from './components/education/components/edit-e
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditKnowledgeComponent } from './components/knowledge/components/edit-knowledge/edit-knowledge.component';
 import { EditProjectComponent } from './components/projects/components/edit-project/edit-project.component';
+import { EditWorkComponent } from './components/works/components/edit-work/edit-work.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { EditProjectComponent } from './components/projects/components/edit-proj
     WorksComponent,
     EditEducationComponent,
     EditKnowledgeComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    EditWorkComponent
   ],
   imports: [
     CommonModule,
