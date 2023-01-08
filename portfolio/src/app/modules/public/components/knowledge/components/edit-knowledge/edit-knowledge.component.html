@@ -4,15 +4,35 @@
   name="name"
   placeholder="Nombre..."
   ></app-ui-input>
+  <app-ui-dropdown
+  [group]="formGroup"
+  name="color"
+  [options]="colors"
+  optionLabel="name"
+  placeholder="Color..."
+  ></app-ui-dropdown>
   <app-ui-input-number
   [group]="formGroup"
   placeholder="Valor..."
   name="value"
   type="percent"
   ></app-ui-input-number>
-  <app-ui-dropdown
-  [group]="formGroup"
-  name="color"
-  label="Color"
-  ></app-ui-dropdown>
+  <div class="row">
+    <div class="d-flex justify-content-center my-2">
+      <button
+        pButton
+        pRipple
+        label="Cancelar"
+        (click)="cancel()"
+        class="p-button p-button-secondary mx-1"
+      ></button>
+      <button
+        pButton
+        pRipple
+        label="Guardar"
+        type="submit"
+        class="p-button p-button-info text-white"
+      ></button>
+    </div>
+  </div>
 </form>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { colors } from 'src/app/consts/color.const';
 import { abstractForm } from 'src/app/core/classes/abstract-form';
 import { KnowledgeService } from 'src/app/services/knowledge.service';
 
@@ -11,6 +12,7 @@ import { KnowledgeService } from 'src/app/services/knowledge.service';
   styleUrls: ['./edit-knowledge.component.css'],
 })
 export class EditKnowledgeComponent extends abstractForm implements OnInit {
+  public colors = colors;
   constructor(
     private fb : FormBuilder,
     ref: DynamicDialogRef,

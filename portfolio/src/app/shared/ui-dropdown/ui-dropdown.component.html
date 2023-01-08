@@ -1,5 +1,5 @@
-<div class="field" [formGroup]="group">
-  <label for="dropdown" class="text-gray-700">{{ label }}</label>
+<div class="form-group" [formGroup]="group">
+  <label for="dropdown" class="text-muted">{{ label }}</label>
   <div class="flex">
     <p-dropdown
       id="dropdown"
@@ -9,6 +9,7 @@
       (onChange)="onInput()"
       [placeholder]="placeholder"
       [showClear]="true"
+      styleClass="text-muted"
     ></p-dropdown>
   </div>
   <small *ngIf="valid" id="dropdown-help" class="p-error block">{{
