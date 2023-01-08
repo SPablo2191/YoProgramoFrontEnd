@@ -1,1 +1,40 @@
-<p>edit-work works!</p>
+<form [formGroup]="formGroup">
+  <app-ui-input
+  [group]="formGroup"
+  name="businessName"
+  label="Empresa"
+  ></app-ui-input>
+  <app-ui-input
+  [group]="formGroup"
+  name="role"
+  label="Rol o perfil desempeñado"
+  ></app-ui-input>
+  <app-ui-calendar
+  label="Fecha de inicio"
+  [group]="formGroup"
+  name="startDate"
+  ></app-ui-calendar>
+  <app-ui-calendar
+  label="Fecha de Fin"
+  [group]="formGroup"
+  name="endDate"
+  ></app-ui-calendar>
+  <div class="row">
+    <div class="d-flex justify-content-center my-2">
+      <button
+        pButton
+        pRipple
+        label="Cancelar"
+        (click)="cancel()"
+        class="p-button p-button-secondary mx-1"
+      ></button>
+      <button
+        pButton
+        pRipple
+        label="Guardar"
+        type="submit"
+        class="p-button p-button-info text-white"
+      ></button>
+    </div>
+  </div>
+</form>

@@ -20,6 +20,7 @@ import { UiCalendarComponent } from './ui-calendar/ui-calendar.component';
 import { DialogService } from 'primeng/dynamicdialog';
 import { UiInputNumberComponent } from './ui-input-number/ui-input-number.component';
 import { UiDropdownComponent } from './ui-dropdown/ui-dropdown.component';
+import { UiCheckBoxComponent } from './ui-check-box/ui-check-box.component';
 
 
 
@@ -40,7 +41,8 @@ import { UiDropdownComponent } from './ui-dropdown/ui-dropdown.component';
     UiPasswordInputComponent,
     UiCalendarComponent,
     UiInputNumberComponent,
-    UiDropdownComponent
+    UiDropdownComponent,
+    UiCheckBoxComponent
   ],
   imports: [
     CommonModule,
