@@ -1,1 +1,13 @@
-<p>edit-knowledge works!</p>
+<form [formGroup]="formGroup">
+  <app-ui-input
+  [group]="formGroup"
+  name="name"
+  placeholder="Nombre..."
+  ></app-ui-input>
+  <app-ui-input-number
+  [group]="formGroup"
+  placeholder="Valor..."
+  name="value"
+  type="percent"
+  ></app-ui-input-number>
+</form>
