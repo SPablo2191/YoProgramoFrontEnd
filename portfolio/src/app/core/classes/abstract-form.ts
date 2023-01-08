@@ -14,7 +14,7 @@ export class abstractForm {
   createForm(): void {}
 
   submit() {
-    console.log(this.formGroup);
+    console.log(this.formGroup.value);
     this.api.post({});
   }
   cancel(){
