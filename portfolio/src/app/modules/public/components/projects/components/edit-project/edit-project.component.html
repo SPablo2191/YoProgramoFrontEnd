@@ -1,0 +1,42 @@
+<form [formGroup]="formGroup">
+  <app-ui-input
+  [group]="formGroup"
+  name="title"
+  label="Titulo"
+  ></app-ui-input>
+  <app-ui-text-area
+  [group]="formGroup"
+  name="description"
+  title="Descripción"
+  ></app-ui-text-area>
+  <app-ui-calendar
+  [group]="formGroup"
+  name="releaseDate"
+  label="Fecha de Realización"
+  [touchUI]="true"
+  ></app-ui-calendar>
+  <app-ui-input
+  [group]="formGroup"
+  name="source"
+  label="URL del proyecto"
+  ></app-ui-input>
+  <div class="row">
+    <div class="d-flex justify-content-center my-2">
+      <button
+        pButton
+        pRipple
+        label="Cancelar"
+        (click)="cancel()"
+        class="p-button p-button-secondary mx-1"
+      ></button>
+      <button
+        pButton
+        pRipple
+        label="Guardar"
+        type="submit"
+        class="p-button p-button-info text-white"
+      ></button>
+    </div>
+  </div>
+
+</form>

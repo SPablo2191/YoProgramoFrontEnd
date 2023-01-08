@@ -1,40 +1,40 @@
 <div class="container-fluid" id="knowledge">
-
-    <div class="row">
-      <div class="col-md-9">
-        <h2>Conocimientos.
-          <span class="text-muted">Knowledge.</span>
-        </h2>
-      </div>
-      <div class="col-md-3">
-        <button
+  <div class="row">
+    <div class="col-md-9">
+      <h2>
+        Conocimientos.
+        <span class="text-muted">Knowledge.</span>
+      </h2>
+    </div>
+    <div class="col-md-3">
+      <button
         pButton
         pRipple
         icon="pi pi-plus"
         label="Agregar"
         (click)="create()"
-        class="p-button p-button-success mx-2  my-1"
+        class="p-button p-button-success mx-2 my-1"
       ></button>
-      <button
+      <!-- <button
       pButton
       pRipple
       icon="pi pi-pencil"
       label="Editar"
       class="p-button p-button-warning text-white  my-1"
-    ></button>
+    ></button> -->
     </div>
     <div class="row">
-      <div class="d-flex justify-content-center">
-
+      <div class="d-flex justify-content-center my-2">
         <div class="container-fluid bg-dark rounded p-4">
-          <div  *ngFor="let item of (items$ | async)!">
+          <div *ngFor="let item of (items$ | async)!">
             <app-ui-progress-bar
-            [label]="item.name"
-            [value]="item.value"
-            [color]="item.color"
+              [label]="item.name"
+              [value]="item.value"
+              [color]="item.color"
             ></app-ui-progress-bar>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
