@@ -14,6 +14,8 @@ import { ButtonModule } from 'primeng/button';
 import {CalendarModule} from 'primeng/calendar';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {DropdownModule} from 'primeng/dropdown';
+import {CheckboxModule} from 'primeng/checkbox';
+
 @NgModule({
   imports: [CommonModule],
   exports: [
@@ -27,7 +29,8 @@ import {DropdownModule} from 'primeng/dropdown';
     ButtonModule,
     CalendarModule,
     InputNumberModule,
-    DropdownModule
+    DropdownModule,
+    CheckboxModule
   ],
   providers: [
     NgbProgressbarConfig,

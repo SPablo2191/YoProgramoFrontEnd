@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ui-check-box',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ui-check-box.component.css']
 })
 export class UiCheckBoxComponent implements OnInit {
-
+  @Input() label! : string;
+  @Input() name! : string;
+  @Input() group! : FormGroup;
   constructor() { }
 
   ngOnInit(): void {

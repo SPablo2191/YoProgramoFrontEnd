@@ -14,10 +14,16 @@
   [group]="formGroup"
   name="startDate"
   ></app-ui-calendar>
+  <app-ui-check-box
+  [group]="formGroup"
+  name="isFinished"
+  label="¿Su rol en esta empresa ha finalizado?"
+  ></app-ui-check-box>
   <app-ui-calendar
   label="Fecha de Fin"
   [group]="formGroup"
   name="endDate"
+  *ngIf="(this.formGroup.get('isFinished')?.value)"
   ></app-ui-calendar>
   <div class="row">
     <div class="d-flex justify-content-center my-2">

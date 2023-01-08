@@ -26,6 +26,7 @@ export class EditWorkComponent extends abstractForm implements OnInit {
       businessName : [],
       role : [],
       startDate : [],
+      isFinished : [false],
       endDate : [],
     });
   }

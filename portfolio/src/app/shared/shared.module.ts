@@ -60,7 +60,8 @@ import { UiCheckBoxComponent } from './ui-check-box/ui-check-box.component';
     UiPasswordInputComponent,
     UiCalendarComponent,
     UiInputNumberComponent,
-    UiDropdownComponent
+    UiDropdownComponent,
+    UiCheckBoxComponent
   ],
   providers : [
     MessageService,

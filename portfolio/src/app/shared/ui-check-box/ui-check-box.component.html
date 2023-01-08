@@ -1,1 +1,8 @@
-<p>ui-check-box works!</p>
+<div class="form-group my-2" [formGroup]="group">
+  <p-checkbox
+  [formControlName]="name"
+  [binary]="true"
+  inputId="binary"
+  ></p-checkbox>
+  <label for="binary" class="text-muted mx-2">{{ label }}</label>
+</div>
