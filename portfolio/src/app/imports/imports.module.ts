@@ -13,6 +13,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import {CalendarModule} from 'primeng/calendar';
 import {InputNumberModule} from 'primeng/inputnumber';
+import {DropdownModule} from 'primeng/dropdown';
 @NgModule({
   imports: [CommonModule],
   exports: [
@@ -25,7 +26,8 @@ import {InputNumberModule} from 'primeng/inputnumber';
     InputTextModule,
     ButtonModule,
     CalendarModule,
-    InputNumberModule
+    InputNumberModule,
+    DropdownModule
   ],
   providers: [
     NgbProgressbarConfig,
