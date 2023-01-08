@@ -13,8 +13,9 @@ export class crud {
   getDialog(component: any, title: string, data = {}) {
     this.ref = this.dialogService.open(component, {
       header: `${title}`,
-      width: '50%',
+      width: '60%',
       data: data,
+      maximizable: true
     });
   }
   create() {
