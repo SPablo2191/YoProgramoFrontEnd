@@ -17,6 +17,7 @@ export class ContactMeComponent extends abstractForm implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
+      email : [],
       message: []
     });
   }
