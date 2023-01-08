@@ -1,0 +1,16 @@
+<div  [formGroup]="group" class="field">
+  <label for="username2" class="text-gray-700">{{ label }}</label>
+  <div >
+    <p-calendar
+      [formControlName]="name"
+      [showIcon]="true"
+      (onSelect)="onSelect()"
+      [showTime]="time"
+      [defaultDate]="date"
+      [touchUI]="touchUI"
+      [placeholder]="placeholder"
+      [showSeconds]="true"
+      inputId="time"
+    ></p-calendar>
+  </div>
+</div>
