@@ -13,7 +13,7 @@ import { WorksService } from 'src/app/services/works.service';
   styleUrls: ['./edit-work.component.css']
 })
 export class EditWorkComponent extends abstractForm implements OnInit {
-
+  override title: string ='Trabajo';
   constructor(
     private fb : FormBuilder,
     ref: DynamicDialogRef,

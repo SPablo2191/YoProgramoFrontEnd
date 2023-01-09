@@ -11,6 +11,7 @@ import { StudiesService } from 'src/app/services/studies.service';
   styleUrls: ['./edit-education.component.css'],
 })
 export class EditEducationComponent extends abstractForm implements OnInit {
+  override title: string ='Estudio';
   constructor(
     private fb: FormBuilder,
     ref: DynamicDialogRef,
