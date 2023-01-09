@@ -14,13 +14,16 @@ export class crud {
     this.ref = this.dialogService.open(component, {
       header: `${title}`,
       width: '60%',
+      height: '60%',
       data: data,
       maximizable: true
     });
   }
   create() {
     this.getDialog(this.editComponent, `Añadir ${this.title}`);
-    this.ref.onClose.pipe(map((response) => console.log('holaa'))).subscribe();
+    this.ref.onClose.pipe(map((response) => {
+      this.api.get();
+    })).subscribe();
   }
   read(): void {}
   update(item: any) {}
