@@ -3,7 +3,8 @@
   <div class="flex">
     <p-dropdown
       id="dropdown"
-      optionLabel="{{optionLabel}}"
+      [optionLabel]="optionLabel"
+      [optionValue]="optionValue"
       [options]="options"
       [formControlName]="name"
       (onChange)="onInput()"

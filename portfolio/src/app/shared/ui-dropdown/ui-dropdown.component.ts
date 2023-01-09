@@ -10,6 +10,7 @@ import { Subject } from 'rxjs';
 export class UiDropdownComponent implements OnInit {
   @Input() label!: string;
   @Input() optionLabel!: string;
+  @Input() optionValue!: string;
   @Input() options : any[] = [];
   @Input() readOnly : boolean = false;
   @Input() placeholder: string = '';
