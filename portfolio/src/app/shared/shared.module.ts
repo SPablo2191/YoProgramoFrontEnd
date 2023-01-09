@@ -21,6 +21,7 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { UiInputNumberComponent } from './ui-input-number/ui-input-number.component';
 import { UiDropdownComponent } from './ui-dropdown/ui-dropdown.component';
 import { UiCheckBoxComponent } from './ui-check-box/ui-check-box.component';
+import { UiToastComponent } from './ui-toast/ui-toast.component';
 
 
 
@@ -42,7 +43,8 @@ import { UiCheckBoxComponent } from './ui-check-box/ui-check-box.component';
     UiCalendarComponent,
     UiInputNumberComponent,
     UiDropdownComponent,
-    UiCheckBoxComponent
+    UiCheckBoxComponent,
+    UiToastComponent
   ],
   imports: [
     CommonModule,
@@ -61,7 +63,8 @@ import { UiCheckBoxComponent } from './ui-check-box/ui-check-box.component';
     UiCalendarComponent,
     UiInputNumberComponent,
     UiDropdownComponent,
-    UiCheckBoxComponent
+    UiCheckBoxComponent,
+    UiToastComponent
   ],
   providers : [
     MessageService,

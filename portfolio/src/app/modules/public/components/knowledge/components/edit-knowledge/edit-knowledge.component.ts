@@ -13,6 +13,7 @@ import { KnowledgeService } from 'src/app/services/knowledge.service';
 })
 export class EditKnowledgeComponent extends abstractForm implements OnInit {
   public colors = colors;
+  override title: string ='Conocimiento';
   constructor(
     private fb : FormBuilder,
     ref: DynamicDialogRef,

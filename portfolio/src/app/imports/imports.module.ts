@@ -15,7 +15,8 @@ import {CalendarModule} from 'primeng/calendar';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {DropdownModule} from 'primeng/dropdown';
 import {CheckboxModule} from 'primeng/checkbox';
-
+import {ToastModule} from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 @NgModule({
   imports: [CommonModule],
   exports: [
@@ -30,11 +31,13 @@ import {CheckboxModule} from 'primeng/checkbox';
     CalendarModule,
     InputNumberModule,
     DropdownModule,
-    CheckboxModule
+    CheckboxModule,
+    ToastModule
   ],
   providers: [
     NgbProgressbarConfig,
-     DialogService
+     DialogService,
+     MessageService
     ],
 })
 export class ImportsModule {}

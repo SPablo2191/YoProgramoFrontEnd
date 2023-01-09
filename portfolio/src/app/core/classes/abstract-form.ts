@@ -5,6 +5,7 @@ import { baseService } from '../services/base.service';
 
 export class abstractForm {
   formGroup!: FormGroup;
+  title! : string;
   constructor(
     public ref: DynamicDialogRef,
     private messageService: MessageService,
@@ -15,9 +16,16 @@ export class abstractForm {
 
   submit() {
     console.log(this.formGroup.value);
-    this.api.post({});
+    let data = this.formGroup.value;
+    this.addMessageService(
+      'success',
+      'Exito',
+      'success',
+      `¡${this.title} registrado con exito!`
+    );
+    // this.api.post(data).subscribe();
   }
-  cancel(){
+  cancel() {
     this.ref.close();
   }
   addMessageService(
