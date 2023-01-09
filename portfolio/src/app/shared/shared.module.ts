@@ -22,6 +22,7 @@ import { UiInputNumberComponent } from './ui-input-number/ui-input-number.compon
 import { UiDropdownComponent } from './ui-dropdown/ui-dropdown.component';
 import { UiCheckBoxComponent } from './ui-check-box/ui-check-box.component';
 import { UiToastComponent } from './ui-toast/ui-toast.component';
+import { UiConfirmDialogComponent } from './ui-confirm-dialog/ui-confirm-dialog.component';
 
 
 
@@ -44,7 +45,8 @@ import { UiToastComponent } from './ui-toast/ui-toast.component';
     UiInputNumberComponent,
     UiDropdownComponent,
     UiCheckBoxComponent,
-    UiToastComponent
+    UiToastComponent,
+    UiConfirmDialogComponent
   ],
   imports: [
     CommonModule,
@@ -64,7 +66,8 @@ import { UiToastComponent } from './ui-toast/ui-toast.component';
     UiInputNumberComponent,
     UiDropdownComponent,
     UiCheckBoxComponent,
-    UiToastComponent
+    UiToastComponent,
+    UiConfirmDialogComponent
   ],
   providers : [
     MessageService,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfirmationService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { Observable } from 'rxjs';
 import { crud } from 'src/app/core/classes/crud.class';
@@ -17,9 +18,10 @@ export class KnowledgeComponent extends crud implements OnInit {
   override editComponent: any = EditKnowledgeComponent;
   constructor(
     dialogService: DialogService,
-    protected knowledgeService: KnowledgeService
+    protected knowledgeService: KnowledgeService,
+    confirmationService: ConfirmationService
   ) {
-    super(dialogService, knowledgeService);
+    super(dialogService, knowledgeService,confirmationService);
   }
 
   ngOnInit(): void {

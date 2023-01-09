@@ -1,3 +1,4 @@
+import { ConfirmationService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { map } from 'rxjs';
 import { baseService } from '../services/base.service';
@@ -8,7 +9,8 @@ export class crud {
   editComponent!: any;
   constructor(
     protected dialogService: DialogService,
-    protected api: baseService
+    protected api: baseService,
+    private confirmationService: ConfirmationService
   ) {}
   getDialog(component: any, title: string, data = {}) {
     this.ref = this.dialogService.open(component, {
@@ -31,5 +33,13 @@ export class crud {
       this.api.get();
     })).subscribe();
   }
-  delete(item: any) {}
+  delete(id : number) {
+    this.confirmationService.confirm({
+      message: `¿Estás seguro que deseas eliminar este item #${id}?`,
+      accept: () => {
+          console.log('hola');
+          this.api.delete(`/${id}`).subscribe();
+      }
+  });
+  }
 }

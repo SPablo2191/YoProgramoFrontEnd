@@ -16,7 +16,8 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import {DropdownModule} from 'primeng/dropdown';
 import {CheckboxModule} from 'primeng/checkbox';
 import {ToastModule} from 'primeng/toast';
-import { MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 @NgModule({
   imports: [CommonModule],
   exports: [
@@ -32,12 +33,14 @@ import { MessageService } from 'primeng/api';
     InputNumberModule,
     DropdownModule,
     CheckboxModule,
-    ToastModule
+    ToastModule,
+    ConfirmDialogModule
   ],
   providers: [
     NgbProgressbarConfig,
      DialogService,
-     MessageService
+     MessageService,
+     ConfirmationService
     ],
 })
 export class ImportsModule {}

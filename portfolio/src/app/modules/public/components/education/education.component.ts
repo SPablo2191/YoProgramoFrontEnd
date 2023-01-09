@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfirmationService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { Observable } from 'rxjs';
 import { crud } from 'src/app/core/classes/crud.class';
@@ -15,8 +16,12 @@ export class EducationComponent extends crud implements OnInit {
   studies$!: Observable<Study[]>;
   override title: string = 'Educación';
   override editComponent: any = EditEducationComponent;
-  constructor( protected studiesService: StudiesService,dialogService : DialogService) {
-    super(dialogService,studiesService);
+  constructor(
+    protected studiesService: StudiesService,
+    dialogService: DialogService,
+    confirmationService: ConfirmationService
+  ) {
+    super(dialogService, studiesService, confirmationService);
   }
 
   ngOnInit(): void {
@@ -25,5 +30,4 @@ export class EducationComponent extends crud implements OnInit {
   override read() {
     this.studies$ = this.studiesService.get();
   }
-
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfirmationService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { Observable } from 'rxjs';
 import { crud } from 'src/app/core/classes/crud.class';
@@ -9,23 +10,24 @@ import { EditProjectComponent } from './components/edit-project/edit-project.com
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css']
+  styleUrls: ['./projects.component.css'],
 })
 export class ProjectsComponent extends crud implements OnInit {
-  projects$! : Observable<Project[]>;
+  projects$!: Observable<Project[]>;
   override title: string = 'Proyectos';
   override editComponent: any = EditProjectComponent;
   constructor(
     dialogService: DialogService,
-    private projectsService : ProjectsService) {
-    super(dialogService,projectsService);
+    private projectsService: ProjectsService,
+    confirmationService: ConfirmationService
+  ) {
+    super(dialogService, projectsService, confirmationService);
   }
 
   ngOnInit(): void {
     this.get();
   }
-  get(){
+  get() {
     this.projects$ = this.projectsService.get();
   }
-
 }

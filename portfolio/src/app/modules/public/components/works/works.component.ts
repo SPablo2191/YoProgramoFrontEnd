@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfirmationService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { Observable } from 'rxjs';
 import { crud } from 'src/app/core/classes/crud.class';
@@ -17,9 +18,10 @@ export class WorksComponent extends crud implements OnInit {
   override editComponent: any = EditWorkComponent;
   constructor(
     dialogService: DialogService,
-    private worksService : WorksService
+    private worksService : WorksService,
+    confirmationService: ConfirmationService
     ){
-      super(dialogService,worksService);
+      super(dialogService,worksService,confirmationService);
     }
   ngOnInit(): void {
     this.works$ = this.worksService.get();

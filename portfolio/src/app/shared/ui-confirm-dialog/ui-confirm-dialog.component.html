@@ -1,0 +1,9 @@
+<p-confirmDialog #cd [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '30vw'}">
+  <ng-template pTemplate="header">
+      <h3></h3>
+  </ng-template>
+  <ng-template pTemplate="footer">
+      <button type="button" pButton icon="pi pi-times" label="Cancelar" (click)="cd.reject()" class="p-button-secondary"></button>
+      <button type="button" pButton icon="pi pi-check" label="Aceptar" (click)="cd.accept()" class="p-button-danger"></button>
+  </ng-template>
+</p-confirmDialog>

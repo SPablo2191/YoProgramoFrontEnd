@@ -13,5 +13,8 @@ export class baseService {
     return this.httpClient.post(this.serverUrl!, data);
   }
   put() {}
-  delete() {}
+  delete(pathVariable ='') {
+    const url = `${this.serverUrl}${pathVariable}`;
+    return this.httpClient.delete(url);
+  }
 }
