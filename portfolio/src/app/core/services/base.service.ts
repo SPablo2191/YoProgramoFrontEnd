@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 export class baseService {
   protected serverUrl: string | undefined;
   constructor(protected httpClient: HttpClient) {}
-  get(params = {}): Observable<any[]> {
-    const url = `${this.serverUrl}`;
-    return this.httpClient.get<any[]>(url, { params });
+  get(pathVariable =''): Observable<any[]> {
+    const url = `${this.serverUrl}${pathVariable}`;
+    return this.httpClient.get<any[]>(url);
   }
   post(data: any) {
     console.log('entro a post');

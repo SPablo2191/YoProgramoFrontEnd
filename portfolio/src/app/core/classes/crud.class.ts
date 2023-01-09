@@ -25,6 +25,11 @@ export class crud {
     })).subscribe();
   }
   read(): void {}
-  update(item: any) {}
+  update(item: any) {
+    this.getDialog(this.editComponent, `Editar ${this.title}`,item);
+    this.ref.onClose.pipe(map((response) => {
+      this.api.get();
+    })).subscribe();
+  }
   delete(item: any) {}
 }

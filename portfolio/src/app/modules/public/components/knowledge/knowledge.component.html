@@ -19,11 +19,31 @@
       <div class="d-flex justify-content-center my-2">
         <div class="container-fluid bg-dark rounded p-4">
           <div *ngFor="let item of (items$ | async)!">
-            <app-ui-progress-bar
-              [label]="item.name"
-              [value]="item.value"
-              [color]="item.color"
-            ></app-ui-progress-bar>
+            <div class="row">
+              <div class="col-8 col-md-11">
+                <app-ui-progress-bar
+                [label]="item.name"
+                [value]="item.value"
+                [color]="item.color"
+              ></app-ui-progress-bar>
+              </div>
+              <div class="col-4 col-md-1">
+                <button
+                pButton
+                pRipple
+                icon="pi pi-pencil"
+                (click)="update(item)"
+                class="p-button p-button-info p-button-text mx-1"
+              ></button>
+              <button
+              pButton
+              pRipple
+              icon="pi pi-trash"
+              (click)="create()"
+              class="p-button p-button-danger p-button-text"
+            ></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

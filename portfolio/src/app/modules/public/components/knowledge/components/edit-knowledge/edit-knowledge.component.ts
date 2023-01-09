@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MessageService } from 'primeng/api';
-import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { colors } from 'src/app/consts/color.const';
 import { abstractForm } from 'src/app/core/classes/abstract-form';
 import { KnowledgeService } from 'src/app/services/knowledge.service';
@@ -16,6 +16,7 @@ export class EditKnowledgeComponent extends abstractForm implements OnInit {
   override title: string ='Conocimiento';
   constructor(
     private fb : FormBuilder,
+    public config: DynamicDialogConfig,
     ref: DynamicDialogRef,
     messageService: MessageService,
     knowledgeService: KnowledgeService
@@ -29,5 +30,8 @@ export class EditKnowledgeComponent extends abstractForm implements OnInit {
       value : [],
       color : []
     })
+    if(this.config.data){
+      this.formGroup.patchValue(this.config.data);
+    }
   }
 }
