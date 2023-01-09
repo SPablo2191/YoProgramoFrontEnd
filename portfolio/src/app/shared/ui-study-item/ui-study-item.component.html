@@ -1,7 +1,8 @@
 <div class="picsum-img-wrapper">
     <img [src]="(image? image : 'assets/images/about-me-picture.jpeg')" [alt]="title"  height="400" class="rounded"  style="object-fit: cover;width: 100%;" />
 </div>
-<div class="carousel-caption ">
+<div class="carousel-caption bg-dark opacity-75 rounded" >
     <h3>{{title}}</h3>
     <p>{{description}}</p>
+    <p>{{ startDate | date }} - {{(endDate ? (endDate | date) : 'Actualidad')}}</p>
 </div>

@@ -9,6 +9,8 @@ export class UiStudyItemComponent implements OnInit {
   @Input() title! : string;
   @Input() image! : string;
   @Input() description! : string;
+  @Input() startDate! : Date;
+  @Input() endDate! : Date;
   constructor() { }
 
   ngOnInit(): void {
