@@ -1,4 +1,7 @@
-<p-card styleClass="p-card-shadow mx-1 p-4 bg-dark text-white    rounded">
+<p-card
+  styleClass="p-card-shadow mx-1 p-4 bg-dark text-white rounded"
+  [style]="{ width: '25rem', height: '27rem' }"
+>
   <ng-template pTemplate="header">
     <div class="container">
       <h3>{{ title }}</h3>
@@ -12,7 +15,7 @@
     <hr />
     <a
       [href]="source"
-      class=" text-decoration-none text-decoration-none"
+      class="text-decoration-none text-decoration-none"
       target="_blank"
       >Ver Proyecto...</a
     >

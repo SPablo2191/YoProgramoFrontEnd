@@ -11,7 +11,7 @@ import { ProjectsService } from 'src/app/services/projects.service';
   styleUrls: ['./edit-project.component.css']
 })
 export class EditProjectComponent extends abstractForm implements OnInit {
-
+  override title: string ='Proyecto';
   constructor(
     private fb : FormBuilder,
     ref: DynamicDialogRef,
