@@ -14,7 +14,6 @@ export class crud {
     this.ref = this.dialogService.open(component, {
       header: `${title}`,
       width: '60%',
-      height: '60%',
       data: data,
       maximizable: true
     });

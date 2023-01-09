@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { catchError, EMPTY, map } from 'rxjs';
 import { abstractForm } from 'src/app/core/classes/abstract-form';
+import { Work } from 'src/app/models/Work.interface';
 import { WorksService } from 'src/app/services/works.service';
 
 @Component({
@@ -30,5 +32,38 @@ export class EditWorkComponent extends abstractForm implements OnInit {
       endDate : [],
     });
   }
+  override submit(): void {
+    let data : Work = {
+      businessName : this.formGroup.get('businessName')?.value,
+      role : this.formGroup.get('role')?.value,
+      startDate : this.formGroup.get('startDate')?.value,
+      endDate : this.formGroup.get('endDate')?.value,
+    } as Work
+    console.log(data);
+    this.workService
+      .post(data)
+      .pipe(
+        map((response) => {
+          console.log(response);
 
+          this.addMessageService(
+            'success',
+            'Exito',
+            'success',
+            `¡${this.title} registrado con exito!`
+          );
+          this.ref.close();
+        }),
+        catchError((err, caught) => {
+          this.addMessageService(
+            'warn',
+            'Advertencia',
+            'warn',
+            `¡${err}!`
+          );
+          return EMPTY;
+        })
+      )
+      .subscribe();
+  }
 }
