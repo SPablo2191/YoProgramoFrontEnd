@@ -8,7 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class UiWorkitemComponent implements OnInit {
   @Input() businessName! : string;
   @Input() role! : string;
-  @Input() releaseDate! : Date;
+  @Input() startDate! : Date;
+  @Input() endDate! : Date;
   @Input() source! : string;
   constructor() { }
 

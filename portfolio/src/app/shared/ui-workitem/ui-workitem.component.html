@@ -1,4 +1,4 @@
-<div class="card m-2 shadow bg-dark text-white">
+<div class="card m-2 shadow bg-dark text-white" >
   <div class="d-flex justify-content-center">
     <img
       class="rounded-circle my-2 img"
@@ -9,6 +9,6 @@
   <div class="card-body text-center">
     <h3 class="card-title">{{ businessName }}</h3>
     <h5 class="text-muted">{{ role }}</h5>
-    <p class="card-text">{{ releaseDate | date }}</p>
+    <p class="card-text">{{ startDate | date }} - {{(endDate ? (endDate | date) : 'Actualidad')}}</p>
   </div>
 </div>
