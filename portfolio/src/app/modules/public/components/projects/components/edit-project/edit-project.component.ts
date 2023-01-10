@@ -23,6 +23,7 @@ export class EditProjectComponent extends abstractForm implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
+      idProject : [],
       title : [],
       description : [],
       releaseDate : [],

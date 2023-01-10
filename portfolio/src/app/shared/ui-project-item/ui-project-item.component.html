@@ -4,17 +4,39 @@
 >
   <ng-template pTemplate="header">
     <div class="container">
-      <h3>{{ title }}</h3>
-      <h5 class="text-muted">{{ releaseDate | date }}</h5>
+      <div class="row">
+        <div class="col-8 co-md-8">
+          <h3>{{ item.title }}</h3>
+        </div>
+          <div class="col-4 col-md-4">
+            <span class="d-flex justify-content-end">
+              <button
+              pButton
+              pRipple
+              icon="pi pi-pencil"
+              (click)="update(item)"
+              class="p-button p-button-info p-button-text"
+            ></button>
+            <button
+            pButton
+            pRipple
+            icon="pi pi-trash"
+            (click)="delete(item.idProject)"
+            class="p-button p-button-danger p-button-text"
+          ></button>
+            </span>
+        </div>
+      </div>
+      <h5 class="text-muted">{{ item.releaseDate | date }}</h5>
     </div>
   </ng-template>
   <div>
-    <p class="text-justify">{{ description }}</p>
+    <p class="text-justify">{{ item.description }}</p>
   </div>
   <ng-template pTemplate="footer">
     <hr />
     <a
-      [href]="source"
+      [href]="item.source"
       class="text-decoration-none text-decoration-none"
       target="_blank"
       >Ver Proyecto...</a

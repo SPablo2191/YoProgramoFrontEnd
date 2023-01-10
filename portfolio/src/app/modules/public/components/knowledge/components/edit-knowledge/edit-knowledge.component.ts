@@ -26,12 +26,14 @@ export class EditKnowledgeComponent extends abstractForm implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
+      idKnowledge : [],
       name : [],
       value : [],
       color : []
     })
     if(this.config.data){
       this.formGroup.patchValue(this.config.data);
+      console.log(this.formGroup.value);
     }
   }
 }

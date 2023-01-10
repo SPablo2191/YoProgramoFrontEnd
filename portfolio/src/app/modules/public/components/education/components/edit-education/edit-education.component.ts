@@ -23,6 +23,7 @@ export class EditEducationComponent extends abstractForm implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
+      idStudy : [],
       title: [],
       description: [],
       startDate: [],

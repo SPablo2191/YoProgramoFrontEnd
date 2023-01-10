@@ -10,10 +10,7 @@
 >
   <ng-template let-item pTemplate="item" >
     <app-ui-project-item
-      [description]="item.description"
-      [title]="item.title"
-      [source]="item.source"
-      [releaseDate]="item.releaseDate"
+    [item]="item"
     ></app-ui-project-item>
   </ng-template>
 </p-carousel>
