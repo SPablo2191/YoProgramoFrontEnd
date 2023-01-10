@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MessageService } from 'primeng/api';
-import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { abstractForm } from 'src/app/core/classes/abstract-form';
 import { StudiesService } from 'src/app/services/studies.service';
 
@@ -15,6 +15,7 @@ export class EditEducationComponent extends abstractForm implements OnInit {
   constructor(
     private fb: FormBuilder,
     ref: DynamicDialogRef,
+    public config: DynamicDialogConfig,
     messageService: MessageService,
     studyService: StudiesService
   ) {
@@ -30,6 +31,10 @@ export class EditEducationComponent extends abstractForm implements OnInit {
       endDate: [],
       isFinished : [false]
     });
+    if(this.config.data){
+      this.formGroup.patchValue(this.config.data);
+      console.log(this.formGroup.value);
+    }
   }
 
 }
