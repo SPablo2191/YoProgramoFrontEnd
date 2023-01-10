@@ -1,8 +1,30 @@
 <div class="picsum-img-wrapper">
-    <img [src]="(image? image : 'assets/images/about-me-picture.jpeg')" [alt]="title"  height="400" class="rounded"  style="object-fit: cover;width: 100%;" />
+    <img [src]="(item.image? item.image : 'assets/images/about-me-picture.jpeg')" [alt]="title"  height="500" class="rounded"  style="object-fit: cover;width: 100%;" />
 </div>
 <div class="carousel-caption bg-dark opacity-75 rounded" >
-    <h3>{{title}}</h3>
-    <p>{{description}}</p>
-    <p>{{ startDate | date }} - {{(endDate ? (endDate | date) : 'Actualidad')}}</p>
+    <div class="row">
+      <div class="col">
+        <h3>{{item.title}}</h3>
+      </div>
+    </div>
+    <p>{{item.description}}</p>
+    <p>{{ item.startDate | date }} - {{(item.endDate ? (item.endDate | date) : 'Actualidad')}}</p>
+    <div class="d-flex justify-content-center">
+      <span>
+        <button
+        pButton
+        pRipple
+        icon="pi pi-pencil"
+        (click)="update(item)"
+        class="p-button p-button-info p-button-text"
+      ></button>
+      <button
+      pButton
+      pRipple
+      icon="pi pi-trash"
+      (click)="delete(item.idStudy)"
+      class="p-button p-button-danger p-button-text"
+    ></button>
+      </span>
+  </div>
 </div>

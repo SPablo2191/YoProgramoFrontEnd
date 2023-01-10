@@ -1,11 +1,7 @@
 <ngb-carousel class="bg-dark rounded" [showNavigationIndicators]="false">
   <ng-template ngbSlide *ngFor="let item of items">
     <app-ui-study-item
-      [description]="item.description"
-      [title]="item.title"
-      [image]="item.image"
-      [endDate]="item.endDate"
-      [startDate]="item.startDate"
+      [item]="item"
     ></app-ui-study-item>
   </ng-template>
 </ngb-carousel>
