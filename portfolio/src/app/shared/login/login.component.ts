@@ -1,23 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { MessageService } from 'primeng/api';
-import { DynamicDialogRef } from 'primeng/dynamicdialog';
-import { abstractForm } from 'src/app/core/classes/abstract-form';
-import { UserService } from 'src/app/services/user.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent extends abstractForm implements OnInit {
+export class LoginComponent  implements OnInit {
+  protected formGroup!: FormGroup;
   constructor(
-    private fb: FormBuilder,
-    ref: DynamicDialogRef,
-    messageService: MessageService,
-    userService: UserService
+    private fb: FormBuilder
   ) {
-    super(ref,messageService, userService);
+
   }
 
   ngOnInit(): void {
@@ -25,5 +19,9 @@ export class LoginComponent extends abstractForm implements OnInit {
       userName: [],
       password: [],
     });
+  }
+  submit(): void {
+      console.log(this.formGroup.value);
+
   }
 }
