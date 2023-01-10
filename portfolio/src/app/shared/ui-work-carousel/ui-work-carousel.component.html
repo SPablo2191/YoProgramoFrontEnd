@@ -8,13 +8,6 @@
   [responsiveOptions]="responsiveOptions"
 >
   <ng-template let-item pTemplate="item">
-    <app-ui-workitem
-      [businessName]="item.businessName"
-      [startDate]="item.startDate"
-      [endDate]="item.endDate"
-      [role]="item.role"
-      [source]="item.source"
-    >
-    </app-ui-workitem>
+    <app-ui-workitem [item]="item"> </app-ui-workitem>
   </ng-template>
 </p-carousel>

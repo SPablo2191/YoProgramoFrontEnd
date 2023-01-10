@@ -37,8 +37,11 @@ export class crud {
     this.confirmationService.confirm({
       message: `¿Estás seguro que deseas eliminar este item # ${id}?`,
       accept: () => {
-          console.log('hola');
-          this.api.delete(`/${id}`).subscribe();
+          this.api.delete(`/${id}`).pipe(
+            map((response=>{
+              console.log(response);
+            }))
+          ).subscribe();
       }
   });
   }

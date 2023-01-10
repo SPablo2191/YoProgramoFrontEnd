@@ -2,13 +2,31 @@
   <div class="d-flex justify-content-center">
     <img
       class="rounded-circle my-2 img"
-      [src]="(source? source : 'assets/images/about-me-picture.jpeg')"
-      [alt]="businessName"
+      [src]="(item.source? item.source : 'assets/images/about-me-picture.jpeg')"
+      [alt]="item.businessName"
     />
   </div>
   <div class="card-body text-center">
-    <h3 class="card-title">{{ businessName }}</h3>
-    <h5 class="text-muted">{{ role }}</h5>
-    <p class="card-text">{{ startDate | date }} - {{(endDate ? (endDate | date) : 'Actualidad')}}</p>
+    <h3 class="card-title">{{ item.businessName }}</h3>
+    <h5 class="text-muted">{{ item.role }}</h5>
+    <p class="card-text">{{ item.startDate | date }} - {{(item.endDate ? (item.endDate | date) : 'Actualidad')}}</p>
+    <div class="d-flex justify-content-center">
+      <span>
+        <button
+        pButton
+        pRipple
+        icon="pi pi-pencil"
+        (click)="update(item)"
+        class="p-button p-button-info p-button-text"
+      ></button>
+      <button
+      pButton
+      pRipple
+      icon="pi pi-trash"
+      (click)="delete(item.idWork)"
+      class="p-button p-button-danger p-button-text"
+    ></button>
+      </span>
+  </div>
   </div>
 </div>
