@@ -1,27 +1,51 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { map, Subscription } from 'rxjs';
+import { User } from 'src/app/models/User.interface';
+import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent  implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   protected formGroup!: FormGroup;
+  private suscriptions$: Subscription = new Subscription();
   constructor(
-    private fb: FormBuilder
-  ) {
-
+    private fb: FormBuilder,
+    private userService: UserService,
+    private auth: AuthService
+  ) {}
+  ngOnDestroy(): void {
+    this.suscriptions$.unsubscribe();
   }
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
-      userName: [],
-      password: [],
+      userName: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(5)]],
     });
   }
   submit(): void {
-      console.log(this.formGroup.value);
-
+    if (this.formGroup.invalid) {
+      return;
+    }
+    this.suscriptions$.add(
+      this.userService
+        .post(this.formGroup.value)
+        .pipe(
+          map((response: any) => {
+            console.log(response);
+            let data: User = {
+              authToken: response.authToken,
+              userName: response.user.userName,
+            } as User;
+            sessionStorage.setItem('currentUser', JSON.stringify(data));
+          })
+        )
+        .subscribe()
+    );
   }
 }

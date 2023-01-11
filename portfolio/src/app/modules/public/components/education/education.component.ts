@@ -14,6 +14,7 @@ import { EditEducationComponent } from './components/edit-education/edit-educati
 })
 export class EducationComponent extends crud implements OnInit {
   studies$!: Observable<Study[]>;
+  isLogged!: boolean;
   override title: string = 'Educación';
   override editComponent: any = EditEducationComponent;
   constructor(
@@ -25,6 +26,10 @@ export class EducationComponent extends crud implements OnInit {
   }
 
   ngOnInit(): void {
+    localStorage.getItem('authToken')
+      ? (this.isLogged = true)
+      : (this.isLogged = false);
+    console.log(this.isLogged,localStorage.getItem('authToken'));
     this.read();
   }
   override read() {
