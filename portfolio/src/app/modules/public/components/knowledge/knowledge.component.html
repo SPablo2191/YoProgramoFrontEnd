@@ -6,7 +6,7 @@
         <span class="text-muted">Knowledge.</span>
       </h2>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2" *ngIf="isLogged">
       <button
         pButton
         pRipple
@@ -28,7 +28,7 @@
                 [color]="item.color"
               ></app-ui-progress-bar>
               </div>
-              <div class="col-4 col-md-1">
+              <div class="col-4 col-md-1" *ngIf="isLogged">
                 <button
                 pButton
                 pRipple

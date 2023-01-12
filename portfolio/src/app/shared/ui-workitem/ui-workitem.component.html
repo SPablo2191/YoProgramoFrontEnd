@@ -10,7 +10,7 @@
     <h3 class="card-title">{{ item.businessName }}</h3>
     <h5 class="text-muted">{{ item.role }}</h5>
     <p class="card-text">{{ item.startDate | date }} - {{(item.endDate ? (item.endDate | date) : 'Actualidad')}}</p>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center" *ngIf="isLogged">
       <span>
         <button
         pButton
