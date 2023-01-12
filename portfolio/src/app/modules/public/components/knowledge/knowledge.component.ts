@@ -4,6 +4,7 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { Observable } from 'rxjs';
 import { crud } from 'src/app/core/classes/crud.class';
 import { Knowledge } from 'src/app/models/Knowledge.interface';
+import { AuthService } from 'src/app/services/auth.service';
 import { KnowledgeService } from 'src/app/services/knowledge.service';
 import { EditKnowledgeComponent } from './components/edit-knowledge/edit-knowledge.component';
 
@@ -19,9 +20,10 @@ export class KnowledgeComponent extends crud implements OnInit {
   constructor(
     dialogService: DialogService,
     protected knowledgeService: KnowledgeService,
-    confirmationService: ConfirmationService
+    confirmationService: ConfirmationService,
+    authService: AuthService
   ) {
-    super(dialogService, knowledgeService,confirmationService);
+    super(dialogService, knowledgeService, confirmationService,authService);
   }
 
   ngOnInit(): void {

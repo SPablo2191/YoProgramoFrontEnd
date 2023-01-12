@@ -18,7 +18,6 @@ import { EditKnowledgeComponent } from './components/knowledge/components/edit-k
 import { EditProjectComponent } from './components/projects/components/edit-project/edit-project.component';
 import { EditWorkComponent } from './components/works/components/edit-work/edit-work.component';
 
-
 @NgModule({
   declarations: [
     PublicComponent,

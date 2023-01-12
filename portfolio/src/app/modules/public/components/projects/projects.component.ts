@@ -4,6 +4,7 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { Observable } from 'rxjs';
 import { crud } from 'src/app/core/classes/crud.class';
 import { Project } from 'src/app/models/Project.interface';
+import { AuthService } from 'src/app/services/auth.service';
 import { ProjectsService } from 'src/app/services/projects.service';
 import { EditProjectComponent } from './components/edit-project/edit-project.component';
 
@@ -19,9 +20,10 @@ export class ProjectsComponent extends crud implements OnInit {
   constructor(
     dialogService: DialogService,
     private projectsService: ProjectsService,
-    confirmationService: ConfirmationService
+    confirmationService: ConfirmationService,
+    authService : AuthService
   ) {
-    super(dialogService, projectsService, confirmationService);
+    super(dialogService, projectsService, confirmationService,authService);
   }
 
   ngOnInit(): void {

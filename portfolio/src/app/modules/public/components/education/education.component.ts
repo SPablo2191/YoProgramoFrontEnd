@@ -21,9 +21,9 @@ export class EducationComponent extends crud implements OnInit {
     protected studiesService: StudiesService,
     dialogService: DialogService,
     confirmationService: ConfirmationService,
-    protected authService : AuthService
+    authService : AuthService
   ) {
-    super(dialogService, studiesService, confirmationService);
+    super(dialogService, studiesService, confirmationService,authService);
   }
 
   ngOnInit(): void {

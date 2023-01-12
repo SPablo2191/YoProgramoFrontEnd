@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit, OnDestroy {
               userName: response.user.userName,
             } as User;
             sessionStorage.setItem('currentUser', JSON.stringify(data));
+            this.auth.setUserSession(data);
             this.ref.close();
           })
         )

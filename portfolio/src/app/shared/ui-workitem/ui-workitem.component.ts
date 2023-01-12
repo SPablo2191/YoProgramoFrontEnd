@@ -4,6 +4,7 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { crud } from 'src/app/core/classes/crud.class';
 import { Work } from 'src/app/models/Work.interface';
 import { EditWorkComponent } from 'src/app/modules/public/components/works/components/edit-work/edit-work.component';
+import { AuthService } from 'src/app/services/auth.service';
 import { WorksService } from 'src/app/services/works.service';
 
 @Component({
@@ -18,9 +19,10 @@ export class UiWorkitemComponent extends crud implements OnInit {
   constructor(
     dialogService: DialogService,
     api: WorksService,
-    confirmationService: ConfirmationService
+    confirmationService: ConfirmationService,
+    authService : AuthService
   ) {
-    super(dialogService,api,confirmationService);
+    super(dialogService,api,confirmationService,authService);
   }
 
   ngOnInit(): void {
