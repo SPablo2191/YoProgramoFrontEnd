@@ -4,5 +4,5 @@ export interface Study{
     description : string;
     startDate : Date;
     endDate : Date;
-    image : string;
+    source : string;
 }

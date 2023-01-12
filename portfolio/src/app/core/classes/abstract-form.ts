@@ -16,13 +16,13 @@ export class abstractForm {
   createForm(): void {}
 
   submit() {
-    console.log(this.formGroup.value);
+
     let data = this.formGroup.value;
     this.api
       .post(data)
       .pipe(
         map((response) => {
-          console.log(response);
+          
 
           this.addMessageService(
             'success',

@@ -22,7 +22,7 @@ export class UiInputComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.name);
+
   }
   onInput() {
     this.change.next(this.group.controls[this.name].value);

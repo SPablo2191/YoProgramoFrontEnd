@@ -32,7 +32,7 @@ export class EditProjectComponent extends abstractForm implements OnInit {
     });
     if (this.config.data) {
       this.formGroup.patchValue(this.config.data);
-      console.log(this.formGroup.value);
+      
     }
   }
 }

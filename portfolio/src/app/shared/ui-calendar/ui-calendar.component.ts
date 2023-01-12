@@ -7,6 +7,7 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./ui-calendar.component.css']
 })
 export class UiCalendarComponent implements OnInit {
+  @Input() defaultDate! : Date;
   @Input() group!: FormGroup;
   @Input() name! : string;
   @Input() label : string = '';
@@ -18,6 +19,8 @@ export class UiCalendarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
+
   }
   onSelect(){
     this.value.emit(this.group.controls[this.name].value);

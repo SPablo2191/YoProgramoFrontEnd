@@ -29,11 +29,15 @@ export class EditEducationComponent extends abstractForm implements OnInit {
       description: [],
       startDate: [],
       endDate: [],
-      isFinished : [false]
+      isFinished : [false],
+      source : []
     });
     if(this.config.data){
       this.formGroup.patchValue(this.config.data);
-      console.log(this.formGroup.value);
+      this.formGroup.get("isFinished")?.setValue(
+        this.formGroup.get("endDate")?.value ? true : false
+      );
+      
     }
   }
 

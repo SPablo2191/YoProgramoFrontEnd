@@ -36,7 +36,10 @@ export class EditWorkComponent extends abstractForm implements OnInit {
     });
     if (this.config.data) {
       this.formGroup.patchValue(this.config.data);
-      console.log(this.formGroup.value);
+      this.formGroup.get("isFinished")?.setValue(
+        this.formGroup.get("endDate")?.value ? true : false
+      );
+      
     }
   }
 }

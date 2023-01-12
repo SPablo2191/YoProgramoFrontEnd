@@ -61,7 +61,7 @@ export class crud {
           .delete(`/${id}`)
           .pipe(
             map((response) => {
-              console.log(response);
+
             })
           )
           .subscribe();

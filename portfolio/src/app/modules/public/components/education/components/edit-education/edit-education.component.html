@@ -20,6 +20,7 @@
       [group]="formGroup"
       name="startDate"
       label="Fecha de inicio"
+      [defaultDate]="formGroup.get('startDate')?.value"
       [touchUI]="true"
     ></app-ui-calendar>
     </div>
@@ -27,6 +28,7 @@
       <app-ui-calendar
         [group]="formGroup"
         name="endDate"
+        [defaultDate]="formGroup.get('endDate')?.value"
         label="fecha de Finalización"
         [touchUI]="true"
         *ngIf="formGroup.get('isFinished')?.value"
@@ -39,6 +41,13 @@
     name="isFinished"
     label="¿Ha finalizado?"
     ></app-ui-check-box>
+  </div>
+  <div class="row">
+    <app-ui-input
+      [group]="formGroup"
+      name="source"
+      label="URL de imagen"
+    ></app-ui-input>
   </div>
   <div class="row">
     <div class="d-flex justify-content-center my-2">
