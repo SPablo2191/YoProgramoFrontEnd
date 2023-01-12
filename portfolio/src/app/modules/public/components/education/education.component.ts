@@ -4,6 +4,7 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { Observable } from 'rxjs';
 import { crud } from 'src/app/core/classes/crud.class';
 import { Study } from 'src/app/models/Study.interface';
+import { AuthService } from 'src/app/services/auth.service';
 import { StudiesService } from 'src/app/services/studies.service';
 import { EditEducationComponent } from './components/edit-education/edit-education.component';
 
@@ -14,22 +15,18 @@ import { EditEducationComponent } from './components/edit-education/edit-educati
 })
 export class EducationComponent extends crud implements OnInit {
   studies$!: Observable<Study[]>;
-  isLogged!: boolean;
   override title: string = 'Educación';
   override editComponent: any = EditEducationComponent;
   constructor(
     protected studiesService: StudiesService,
     dialogService: DialogService,
-    confirmationService: ConfirmationService
+    confirmationService: ConfirmationService,
+    protected authService : AuthService
   ) {
     super(dialogService, studiesService, confirmationService);
   }
 
   ngOnInit(): void {
-    localStorage.getItem('authToken')
-      ? (this.isLogged = true)
-      : (this.isLogged = false);
-    console.log(this.isLogged,localStorage.getItem('authToken'));
     this.read();
   }
   override read() {

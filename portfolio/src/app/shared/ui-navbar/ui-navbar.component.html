@@ -40,7 +40,23 @@
         </li>
       </ul>
       <div class="d-flex">
-        <button class="btn btn-outline-success" type="button" (click)="showLogin()">Acceder</button>
+        <button
+          class="btn btn-outline-danger"
+          type="button"
+          (click)="logOut()"
+          *ngIf="isLogged; else elseblock"
+        >
+          Cerrar Sesión
+        </button>
+        <ng-template #elseblock>
+          <button
+          class="btn btn-outline-success"
+          type="button"
+          (click)="showLogin()"
+        >
+          Acceder
+        </button>
+        </ng-template>
       </div>
     </div>
   </div>

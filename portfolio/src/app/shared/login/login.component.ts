@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import { map, Subscription } from 'rxjs';
 import { User } from 'src/app/models/User.interface';
 import { AuthService } from 'src/app/services/auth.service';
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   protected formGroup!: FormGroup;
   private suscriptions$: Subscription = new Subscription();
   constructor(
+    private ref : DynamicDialogRef,
     private fb: FormBuilder,
     private userService: UserService,
     private auth: AuthService
@@ -43,6 +45,7 @@ export class LoginComponent implements OnInit, OnDestroy {
               userName: response.user.userName,
             } as User;
             sessionStorage.setItem('currentUser', JSON.stringify(data));
+            this.ref.close();
           })
         )
         .subscribe()
