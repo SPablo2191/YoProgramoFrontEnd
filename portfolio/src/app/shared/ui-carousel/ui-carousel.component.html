@@ -1,5 +1,6 @@
+<!-- <pre>{{items$ | async | json}}</pre> -->
 <ngb-carousel class="bg-dark rounded" [showNavigationIndicators]="false">
-  <ng-template ngbSlide *ngFor="let item of items">
+  <ng-template ngbSlide *ngFor="let item of items$ | async">
     <app-ui-study-item
       [item]="item"
     ></app-ui-study-item>

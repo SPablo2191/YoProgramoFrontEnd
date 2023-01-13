@@ -1,11 +1,12 @@
 import { ConfirmationService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { map, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { baseService } from '../services/base.service';
 
 export class crud {
-  items$!: Observable<any[]>;
+  //items : BehaviorSubject<any []> = new BehaviorSubject([] as any[]);
+  items$! : Observable<any[]> ;
   ref!: DynamicDialogRef;
   title!: string;
   editComponent!: any;
@@ -38,8 +39,8 @@ export class crud {
     this.ref.onClose
       .pipe(
         map((response) => {
-          if(response){
-            this.items$ = this.api.get();
+          if (response) {
+            this.read();
           }
         })
       )
@@ -53,8 +54,8 @@ export class crud {
     this.ref.onClose
       .pipe(
         map((response) => {
-          if(response){
-            this.items$ = this.api.get();
+          if (response) {
+            this.items$ = response;
           }
         })
       )
@@ -68,7 +69,7 @@ export class crud {
           .delete(`/${id}`)
           .pipe(
             map((response) => {
-                this.items$ = this.api.get();
+              this.read();
             })
           )
           .subscribe();

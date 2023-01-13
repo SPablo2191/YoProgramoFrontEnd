@@ -1,7 +1,7 @@
 import { FormGroup } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
-import { catchError, EMPTY, map } from 'rxjs';
+import { catchError, EMPTY, map, of } from 'rxjs';
 import { baseService } from '../services/base.service';
 
 export class abstractForm {
@@ -21,13 +21,14 @@ export class abstractForm {
       .post(data)
       .pipe(
         map((response) => {
+          console.log(response);
           this.addMessageService(
             'success',
             'Exito',
             'success',
             `¡${this.title} registrado con exito!`
           );
-          this.ref.close(true);
+          this.ref.close(of(response));
         }),
         catchError((err, caught) => {
           this.addMessageService('warn', 'Advertencia', 'warn', `¡${err}!`);

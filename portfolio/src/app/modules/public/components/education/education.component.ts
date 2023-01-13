@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren } from '@angular/core';
+import {  AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ConfirmationService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { Observable } from 'rxjs';
@@ -14,7 +14,9 @@ import { EditEducationComponent } from './components/edit-education/edit-educati
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.css'],
 })
-export class EducationComponent extends crud implements OnInit {
+export class EducationComponent extends crud implements OnInit,OnDestroy,AfterViewInit {
+  @ViewChild("carousel")
+  componentCarousel! : UiCarouselComponent;
   override title: string = 'Educación';
   override editComponent: any = EditEducationComponent;
   constructor(
@@ -24,6 +26,14 @@ export class EducationComponent extends crud implements OnInit {
     authService : AuthService
   ) {
     super(dialogService, studiesService, confirmationService,authService);
+  }
+  ngAfterViewInit(): void {
+    // this.carousel = this.componentCarousel;
+    // this.items$.subscribe(response => this.carousel.items = response)
+
+  }
+  ngOnDestroy(): void {
+    //this.subscriptions$.unsubscribe();
   }
 
   ngOnInit(): void {
