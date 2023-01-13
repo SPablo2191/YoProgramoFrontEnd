@@ -14,7 +14,6 @@ import { EditEducationComponent } from './components/edit-education/edit-educati
   styleUrls: ['./education.component.css'],
 })
 export class EducationComponent extends crud implements OnInit {
-  studies$!: Observable<Study[]>;
   override title: string = 'Educación';
   override editComponent: any = EditEducationComponent;
   constructor(
@@ -30,6 +29,6 @@ export class EducationComponent extends crud implements OnInit {
     this.read();
   }
   override read() {
-    this.studies$ = this.studiesService.get();
+    this.items$ = this.studiesService.get();
   }
 }

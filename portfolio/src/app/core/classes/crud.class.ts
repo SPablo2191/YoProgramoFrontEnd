@@ -1,10 +1,11 @@
 import { ConfirmationService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { baseService } from '../services/base.service';
 
 export class crud {
+  items$!: Observable<any[]>;
   ref!: DynamicDialogRef;
   title!: string;
   editComponent!: any;
@@ -38,7 +39,7 @@ export class crud {
       .pipe(
         map((response) => {
           if(response){
-            this.api.get();
+            this.items$ = this.api.get();
           }
         })
       )
@@ -51,7 +52,7 @@ export class crud {
       .pipe(
         map((response) => {
           if(response){
-            this.api.get();
+            this.items$ = this.api.get();
           }
         })
       )

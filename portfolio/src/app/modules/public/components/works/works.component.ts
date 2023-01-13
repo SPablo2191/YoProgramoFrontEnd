@@ -14,7 +14,6 @@ import { EditWorkComponent } from './components/edit-work/edit-work.component';
   styleUrls: ['./works.component.css']
 })
 export class WorksComponent extends crud implements OnInit {
-  works$! : Observable<Work[]>;
   override title: string = 'Experiencia Laboral';
   override editComponent: any = EditWorkComponent;
   constructor(
@@ -26,7 +25,7 @@ export class WorksComponent extends crud implements OnInit {
       super(dialogService,worksService,confirmationService,authService);
     }
   ngOnInit(): void {
-    this.works$ = this.worksService.get();
+    this.items$ = this.worksService.get();
   }
 
 }

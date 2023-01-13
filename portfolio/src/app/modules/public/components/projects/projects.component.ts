@@ -14,7 +14,6 @@ import { EditProjectComponent } from './components/edit-project/edit-project.com
   styleUrls: ['./projects.component.css'],
 })
 export class ProjectsComponent extends crud implements OnInit {
-  projects$!: Observable<Project[]>;
   override title: string = 'Proyectos';
   override editComponent: any = EditProjectComponent;
   constructor(
@@ -30,6 +29,6 @@ export class ProjectsComponent extends crud implements OnInit {
     this.get();
   }
   get() {
-    this.projects$ = this.projectsService.get();
+    this.items$ = this.projectsService.get();
   }
 }

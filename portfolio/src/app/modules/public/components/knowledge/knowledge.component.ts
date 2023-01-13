@@ -14,7 +14,7 @@ import { EditKnowledgeComponent } from './components/edit-knowledge/edit-knowled
   styleUrls: ['./knowledge.component.css'],
 })
 export class KnowledgeComponent extends crud implements OnInit {
-  items$!: Observable<Knowledge[]>;
+  // items$!: Observable<Knowledge[]>;
   override title: string = 'Conocimiento';
   override editComponent: any = EditKnowledgeComponent;
   constructor(
