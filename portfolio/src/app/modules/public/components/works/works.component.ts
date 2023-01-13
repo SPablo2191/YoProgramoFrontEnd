@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ConfirmationService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { Observable } from 'rxjs';
@@ -13,7 +13,7 @@ import { EditWorkComponent } from './components/edit-work/edit-work.component';
   templateUrl: './works.component.html',
   styleUrls: ['./works.component.css']
 })
-export class WorksComponent extends crud implements OnInit {
+export class WorksComponent extends crud implements OnInit,OnDestroy {
   override title: string = 'Experiencia Laboral';
   override editComponent: any = EditWorkComponent;
   constructor(
@@ -24,6 +24,9 @@ export class WorksComponent extends crud implements OnInit {
     ){
       super(dialogService,worksService,confirmationService,authService);
     }
+  ngOnDestroy(): void {
+    this.subscriptions$.unsubscribe();
+  }
   ngOnInit(): void {
     this.read();
   }

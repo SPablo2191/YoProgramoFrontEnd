@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ConfirmationService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { crud } from 'src/app/core/classes/crud.class';
@@ -12,7 +12,7 @@ import { ProjectsService } from 'src/app/services/projects.service';
   templateUrl: './ui-project-item.component.html',
   styleUrls: ['./ui-project-item.component.css'],
 })
-export class UiProjectItemComponent extends crud implements OnInit {
+export class UiProjectItemComponent extends crud implements OnInit,OnDestroy {
   @Input() item!: Project;
   override title: string = 'Proyecto';
   override editComponent: any = EditProjectComponent;
@@ -23,6 +23,9 @@ export class UiProjectItemComponent extends crud implements OnInit {
     authService : AuthService
   ) {
     super(dialogService, api, confirmationService,authService);
+  }
+  ngOnDestroy(): void {
+    this.subscriptions$.unsubscribe();
   }
 
   ngOnInit(): void {}

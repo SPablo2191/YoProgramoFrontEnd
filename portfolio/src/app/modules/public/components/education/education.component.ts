@@ -33,7 +33,7 @@ export class EducationComponent extends crud implements OnInit,OnDestroy,AfterVi
 
   }
   ngOnDestroy(): void {
-    //this.subscriptions$.unsubscribe();
+    this.subscriptions$.unsubscribe();
   }
 
   ngOnInit(): void {

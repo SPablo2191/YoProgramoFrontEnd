@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ConfirmationService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { Observable } from 'rxjs';
@@ -13,7 +13,7 @@ import { EditProjectComponent } from './components/edit-project/edit-project.com
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
 })
-export class ProjectsComponent extends crud implements OnInit {
+export class ProjectsComponent extends crud implements OnInit, OnDestroy {
   override title: string = 'Proyectos';
   override editComponent: any = EditProjectComponent;
   constructor(
@@ -23,6 +23,9 @@ export class ProjectsComponent extends crud implements OnInit {
     authService : AuthService
   ) {
     super(dialogService, projectsService, confirmationService,authService);
+  }
+  ngOnDestroy(): void {
+    this.subscriptions$.unsubscribe();
   }
 
   ngOnInit(): void {

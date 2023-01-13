@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ConfirmationService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { Observable } from 'rxjs';
@@ -13,7 +13,7 @@ import { EditKnowledgeComponent } from './components/edit-knowledge/edit-knowled
   templateUrl: './knowledge.component.html',
   styleUrls: ['./knowledge.component.css'],
 })
-export class KnowledgeComponent extends crud implements OnInit {
+export class KnowledgeComponent extends crud implements OnInit,OnDestroy {
   // items$!: Observable<Knowledge[]>;
   override title: string = 'Conocimiento';
   override editComponent: any = EditKnowledgeComponent;
@@ -24,6 +24,9 @@ export class KnowledgeComponent extends crud implements OnInit {
     authService: AuthService
   ) {
     super(dialogService, knowledgeService, confirmationService,authService);
+  }
+  ngOnDestroy(): void {
+    this.subscriptions$.unsubscribe();
   }
 
   ngOnInit(): void {

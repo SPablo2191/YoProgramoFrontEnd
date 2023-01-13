@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ConfirmationService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { crud } from 'src/app/core/classes/crud.class';
@@ -12,7 +12,7 @@ import { StudiesService } from 'src/app/services/studies.service';
   templateUrl: './ui-study-item.component.html',
   styleUrls: ['./ui-study-item.component.css'],
 })
-export class UiStudyItemComponent extends crud implements OnInit {
+export class UiStudyItemComponent extends crud implements OnInit,OnDestroy {
   @Input() item!: Study;
   override title: string = 'Estudio';
   override editComponent: any = EditEducationComponent;
@@ -23,6 +23,9 @@ export class UiStudyItemComponent extends crud implements OnInit {
     authService: AuthService
   ) {
     super(dialogService, api, confirmationService,authService);
+  }
+  ngOnDestroy(): void {
+    this.subscriptions$.unsubscribe();
   }
   ngOnInit(): void {}
 }

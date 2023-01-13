@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ConfirmationService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { crud } from 'src/app/core/classes/crud.class';
@@ -12,7 +12,7 @@ import { WorksService } from 'src/app/services/works.service';
   templateUrl: './ui-workitem.component.html',
   styleUrls: ['./ui-workitem.component.css']
 })
-export class UiWorkitemComponent extends crud implements OnInit {
+export class UiWorkitemComponent extends crud implements OnInit,OnDestroy {
   @Input() item! : Work;
   override title: string = 'Trabajo';
   override editComponent: any = EditWorkComponent;
@@ -23,6 +23,9 @@ export class UiWorkitemComponent extends crud implements OnInit {
     authService : AuthService
   ) {
     super(dialogService,api,confirmationService,authService);
+  }
+  ngOnDestroy(): void {
+    this.subscriptions$.unsubscribe();
   }
 
   ngOnInit(): void {
