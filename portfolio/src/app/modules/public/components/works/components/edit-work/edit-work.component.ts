@@ -34,12 +34,12 @@ export class EditWorkComponent extends abstractForm implements OnInit {
       endDate: [],
       source : []
     });
-    if (this.config.data) {
+    if (Object.keys(this.config.data).length !== 0) {
       this.formGroup.patchValue(this.config.data);
       this.formGroup.get("isFinished")?.setValue(
         this.formGroup.get("endDate")?.value ? true : false
       );
-      
+
     }
   }
 }

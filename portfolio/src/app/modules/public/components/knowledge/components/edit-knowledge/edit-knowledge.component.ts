@@ -31,9 +31,9 @@ export class EditKnowledgeComponent extends abstractForm implements OnInit {
       value : [],
       color : []
     })
-    if(this.config.data){
+    if(Object.keys(this.config.data).length !== 0){
       this.formGroup.patchValue(this.config.data);
-      
+
     }
   }
 }

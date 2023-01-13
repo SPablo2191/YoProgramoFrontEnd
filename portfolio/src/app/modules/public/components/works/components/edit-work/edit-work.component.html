@@ -15,7 +15,6 @@
       label="Fecha de inicio"
       [group]="formGroup"
       name="startDate"
-      [defaultDate]="formGroup.get('startDate')?.value"
       [touchUI]="true"
       ></app-ui-calendar>
     </div>
@@ -24,7 +23,6 @@
       label="Fecha de Finalización"
       [group]="formGroup"
       [touchUI]="true"
-      [defaultDate]="formGroup.get('endDate')?.value"
       name="endDate"
       *ngIf="(this.formGroup.get('isFinished')?.value)"
       ></app-ui-calendar>
