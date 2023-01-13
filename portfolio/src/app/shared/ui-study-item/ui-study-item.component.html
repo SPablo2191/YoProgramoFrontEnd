@@ -1,17 +1,26 @@
 <div class="picsum-img-wrapper">
-    <img [src]="(item.source? item.source : 'assets/images/about-me-picture.jpeg')" [alt]="title"  height="500" class="rounded"  style="object-fit: cover;width: 100%;" />
+  <img
+    [src]="item.source ? item.source : 'assets/images/about-me-picture.jpeg'"
+    [alt]="title"
+    height="500"
+    class="rounded"
+    style="object-fit: cover; width: 100vw; object-position: 50% 30%"
+  />
 </div>
-<div class="carousel-caption bg-dark opacity-75 rounded" >
-    <div class="row">
-      <div class="col">
-        <h3>{{item.title}}</h3>
-      </div>
+<div class="carousel-caption bg-dark opacity-75 rounded">
+  <div class="row">
+    <div class="col">
+      <h3>{{ item.title }}</h3>
     </div>
-    <p>{{item.description}}</p>
-    <p>{{ item.startDate | date }} - {{(item.endDate ? (item.endDate | date) : 'Actualidad')}}</p>
-    <div class="d-flex justify-content-center" *ngIf="isLogged">
-      <span>
-        <button
+  </div>
+  <p>{{ item.description }}</p>
+  <p>
+    {{ item.startDate | date }} -
+    {{ item.endDate ? (item.endDate | date) : "Actualidad" }}
+  </p>
+  <div class="d-flex justify-content-center" *ngIf="isLogged">
+    <span>
+      <button
         pButton
         pRipple
         icon="pi pi-pencil"
@@ -19,12 +28,12 @@
         class="p-button p-button-info p-button-text"
       ></button>
       <button
-      pButton
-      pRipple
-      icon="pi pi-trash"
-      (click)="delete(item.idStudy)"
-      class="p-button p-button-danger p-button-text"
-    ></button>
-      </span>
+        pButton
+        pRipple
+        icon="pi pi-trash"
+        (click)="delete(item.idStudy)"
+        class="p-button p-button-danger p-button-text"
+      ></button>
+    </span>
   </div>
 </div>
