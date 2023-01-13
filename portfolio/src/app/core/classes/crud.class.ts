@@ -6,7 +6,7 @@ import { baseService } from '../services/base.service';
 
 export class crud {
   //items : BehaviorSubject<any []> = new BehaviorSubject([] as any[]);
-  items$! : Observable<any[]> ;
+  items$!: Observable<any[]>;
   ref!: DynamicDialogRef;
   title!: string;
   editComponent!: any;
