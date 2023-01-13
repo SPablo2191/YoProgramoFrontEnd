@@ -25,7 +25,7 @@ export class WorksComponent extends crud implements OnInit {
       super(dialogService,worksService,confirmationService,authService);
     }
   ngOnInit(): void {
-    this.items$ = this.worksService.get();
+    this.read();
   }
 
 }

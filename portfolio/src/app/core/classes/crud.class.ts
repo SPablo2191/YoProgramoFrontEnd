@@ -45,7 +45,9 @@ export class crud {
       )
       .subscribe();
   }
-  read(): void {}
+  read(): void {
+    this.items$ = this.api.get();
+  }
   update(item: any) {
     this.getDialog(this.editComponent, `Editar ${this.title}`, item);
     this.ref.onClose
@@ -66,7 +68,7 @@ export class crud {
           .delete(`/${id}`)
           .pipe(
             map((response) => {
-
+                this.items$ = this.api.get();
             })
           )
           .subscribe();

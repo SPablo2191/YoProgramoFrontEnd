@@ -27,6 +27,6 @@ export class KnowledgeComponent extends crud implements OnInit {
   }
 
   ngOnInit(): void {
-    this.items$ = this.knowledgeService.get();
+    this.read();
   }
 }

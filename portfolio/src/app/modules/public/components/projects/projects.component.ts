@@ -26,9 +26,6 @@ export class ProjectsComponent extends crud implements OnInit {
   }
 
   ngOnInit(): void {
-    this.get();
-  }
-  get() {
-    this.items$ = this.projectsService.get();
+    this.read();
   }
 }
