@@ -6,9 +6,16 @@
     overflow: hidden;
     border-radius: 50%;
   }
-  
+
   .circular--landscape img {
     width: auto;
     height: 100%;
     margin-left: -25px;
   }
+
+.iconSocial{
+  font-size: 1.5rem;
+}
+.iconSocial :hover{
+  font-size: 2rem;
+}
