@@ -16,36 +16,28 @@ export class abstractForm {
   createForm(): void {}
 
   submit() {
-
     let data = this.formGroup.value;
     this.api
       .post(data)
       .pipe(
         map((response) => {
-          
-
           this.addMessageService(
             'success',
             'Exito',
             'success',
             `¡${this.title} registrado con exito!`
           );
-          this.ref.close();
+          this.ref.close(true);
         }),
         catchError((err, caught) => {
-          this.addMessageService(
-            'warn',
-            'Advertencia',
-            'warn',
-            `¡${err}!`
-          );
+          this.addMessageService('warn', 'Advertencia', 'warn', `¡${err}!`);
           return EMPTY;
         })
       )
       .subscribe();
   }
   cancel() {
-    this.ref.close();
+    this.ref.close(false);
   }
   addMessageService(
     severity: string,

@@ -21,7 +21,7 @@
         <div class="container-fluid bg-dark rounded p-4">
           <div *ngFor="let item of (items$ | async)!">
             <div class="row">
-              <div class="col-8 col-md-11">
+              <div class="col col-md-11">
                 <app-ui-progress-bar
                 [label]="item.name"
                 [value]="item.value"

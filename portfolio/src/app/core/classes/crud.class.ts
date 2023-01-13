@@ -37,7 +37,9 @@ export class crud {
     this.ref.onClose
       .pipe(
         map((response) => {
-          this.api.get();
+          if(response){
+            this.api.get();
+          }
         })
       )
       .subscribe();
@@ -48,7 +50,9 @@ export class crud {
     this.ref.onClose
       .pipe(
         map((response) => {
-          this.api.get();
+          if(response){
+            this.api.get();
+          }
         })
       )
       .subscribe();

@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup" (submit)="submit()">
+<form [formGroup]="formGroup" >
   <app-ui-input
   [group]="formGroup"
   name="businessName"
@@ -46,6 +46,7 @@
         pButton
         pRipple
         label="Cancelar"
+        type="button"
         (click)="cancel()"
         class="p-button p-button-secondary  mx-1"
       ></button>
@@ -53,7 +54,8 @@
         pButton
         pRipple
         label="Guardar"
-        type="submit"
+        type="button"
+        (click)="submit()"
         class="p-button p-button-info text-white"
       ></button>
     </div>
