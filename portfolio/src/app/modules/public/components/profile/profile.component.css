@@ -19,3 +19,6 @@
 .iconSocial :hover{
   font-size: 2rem;
 }
+.css-shadow {
+  filter: drop-shadow(0 0 5px grey);
+}
