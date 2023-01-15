@@ -56,7 +56,7 @@ export class crud {
       .pipe(
         map((response) => {
           if (response) {
-            this.items$ = response;
+            this.read();
           }
         })
       )
