@@ -8,16 +8,24 @@
     </div>
     <div class="col-2 col-md-2" *ngIf="isLogged">
       <button
-      pButton
-      pRipple
-      icon="pi pi-plus"
-      label="Nuevo"
-      (click)="create()"
-      class="p-button p-button-success p-button-outlined block mx-2"
-    ></button>
+        pButton
+        pRipple
+        icon="pi pi-plus"
+        label="Nuevo"
+        (click)="create()"
+        class="p-button p-button-success p-button-outlined block mx-2"
+      ></button>
     </div>
   </div>
   <div class="row">
-    <app-ui-carousel [items$]="items$" class="my-3" #carousel></app-ui-carousel>
+    <app-ui-carousel
+      [items$]="items$"
+      class="my-3"
+      #carousel
+      *ngIf="(items$ | async)! !== null; else elseblock"
+    ></app-ui-carousel>
+    <ng-template #elseblock>
+      <app-ui-spinner></app-ui-spinner>
+    </ng-template>
   </div>
 </div>

@@ -18,6 +18,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {ToastModule} from 'primeng/toast';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import { ProgressSpinnerModule} from 'primeng/progressspinner';
 @NgModule({
   imports: [CommonModule],
   exports: [
@@ -34,7 +35,8 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     DropdownModule,
     CheckboxModule,
     ToastModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    ProgressSpinnerModule
   ],
   providers: [
     NgbProgressbarConfig,

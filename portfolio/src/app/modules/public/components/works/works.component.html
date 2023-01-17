@@ -17,7 +17,13 @@
       ></button>
     </div>
   </div>
-  <div  id="work">
-    <app-ui-work-carousel [items]="(items$ | async)!"></app-ui-work-carousel>
+  <div id="work">
+    <app-ui-work-carousel
+      [items]="(items$ | async)!"
+      *ngIf="(items$ | async)! !== null; else elseblock"
+    ></app-ui-work-carousel>
+    <ng-template #elseblock>
+      <app-ui-spinner></app-ui-spinner>
+    </ng-template>
   </div>
 </div>

@@ -20,7 +20,11 @@
   <div class="row">
     <app-ui-project-carousel
       [items]="(items$ | async)!"
+      *ngIf="(items$ | async)! !== null; else elseblock"
     >
-  </app-ui-project-carousel>
+    </app-ui-project-carousel>
+    <ng-template #elseblock>
+      <app-ui-spinner></app-ui-spinner>
+    </ng-template>
   </div>
 </div>

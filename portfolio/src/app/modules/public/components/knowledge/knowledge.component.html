@@ -18,35 +18,41 @@
     </div>
     <div>
       <div class="d-flex justify-content-center my-2">
-        <div class="container-fluid bg-dark rounded p-4">
+        <div
+          class="container-fluid bg-dark rounded p-4"
+          *ngIf="(items$ | async)! !== null; else elseblock"
+        >
           <div *ngFor="let item of (items$ | async)!">
             <div class="row">
               <div class="col col-md-11">
                 <app-ui-progress-bar
-                [label]="item.name"
-                [value]="item.value"
-                [color]="item.color"
-              ></app-ui-progress-bar>
+                  [label]="item.name"
+                  [value]="item.value"
+                  [color]="item.color"
+                ></app-ui-progress-bar>
               </div>
               <div class="col-4 col-md-1" *ngIf="isLogged">
                 <button
-                pButton
-                pRipple
-                icon="pi pi-pencil"
-                (click)="update(item)"
-                class="p-button p-button-info p-button-text mx-1"
-              ></button>
-              <button
-              pButton
-              pRipple
-              icon="pi pi-trash"
-              (click)="delete(item.idKnowledge)"
-              class="p-button p-button-danger p-button-text"
-            ></button>
+                  pButton
+                  pRipple
+                  icon="pi pi-pencil"
+                  (click)="update(item)"
+                  class="p-button p-button-info p-button-text mx-1"
+                ></button>
+                <button
+                  pButton
+                  pRipple
+                  icon="pi pi-trash"
+                  (click)="delete(item.idKnowledge)"
+                  class="p-button p-button-danger p-button-text"
+                ></button>
               </div>
             </div>
           </div>
         </div>
+        <ng-template #elseblock>
+          <app-ui-spinner></app-ui-spinner>
+        </ng-template>
       </div>
     </div>
   </div>

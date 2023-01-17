@@ -23,8 +23,7 @@ import { UiDropdownComponent } from './ui-dropdown/ui-dropdown.component';
 import { UiCheckBoxComponent } from './ui-check-box/ui-check-box.component';
 import { UiToastComponent } from './ui-toast/ui-toast.component';
 import { UiConfirmDialogComponent } from './ui-confirm-dialog/ui-confirm-dialog.component';
-
-
+import { UiSpinnerComponent } from './ui-spinner/ui-spinner.component';
 
 @NgModule({
   declarations: [
@@ -46,14 +45,11 @@ import { UiConfirmDialogComponent } from './ui-confirm-dialog/ui-confirm-dialog.
     UiDropdownComponent,
     UiCheckBoxComponent,
     UiToastComponent,
-    UiConfirmDialogComponent
+    UiConfirmDialogComponent,
+    UiSpinnerComponent,
   ],
-  imports: [
-    CommonModule,
-    ImportsModule,
-    ReactiveFormsModule
-  ],
-  exports :[
+  imports: [CommonModule, ImportsModule, ReactiveFormsModule],
+  exports: [
     UiNavbarComponent,
     UiCarouselComponent,
     UiProjectCarouselComponent,
@@ -67,11 +63,9 @@ import { UiConfirmDialogComponent } from './ui-confirm-dialog/ui-confirm-dialog.
     UiDropdownComponent,
     UiCheckBoxComponent,
     UiToastComponent,
-    UiConfirmDialogComponent
+    UiConfirmDialogComponent,
+    UiSpinnerComponent,
   ],
-  providers : [
-    MessageService,
-    DialogService
-  ]
+  providers: [MessageService, DialogService],
 })
-export class SharedModule { }
+export class SharedModule {}
