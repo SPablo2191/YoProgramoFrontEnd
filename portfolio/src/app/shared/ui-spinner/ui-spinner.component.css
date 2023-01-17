@@ -5,17 +5,17 @@
 @keyframes custom-progress-spinner-color {
   100%,
   0% {
-      stroke: #16697A;
+      stroke: #212f3c;
   }
   40% {
-      stroke: #489FB5;
+      stroke: #212f3c;
   }
   66% {
-      stroke: #82C0CC;
+      stroke:  #283747 ;
   }
   80%,
   90% {
-      stroke: #FFA62B;
+      stroke:  #34495e ;
   }
 }
 
